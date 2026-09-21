@@ -13,12 +13,14 @@ export default function Footer() {
           </div>
           <div>
             <h3>Explore</h3>
+            <Link href="/house">Casa Vetrei · The House</Link>
             <Link href="/shop">Shop collections</Link>
+            <Link href="/symbols">Cabinet of Symbols</Link>
             <Link href="/about">Our story</Link>
-            <Link href="/faq">FAQ</Link>
           </div>
           <div>
             <h3>Keep close</h3>
+            <Link href="/faq">FAQ</Link>
             <Link href="/contact">Contact</Link>
             <a href="#newsletter">Newsletter</a>
             <span className="social-placeholder">Instagram · Pinterest · Etsy</span>
