@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import HearthToggle from './HearthToggle';
 
 const links = [
-  ['Home', '/'],
-  ['Shop', '/shop'],
+  ['The House', '/house'],
+  ['Symbols', '/symbols'],
   ['Our story', '/about'],
   ['FAQ', '/faq'],
-  ['Contact', '/contact'],
 ] as const;
 
 export default function Header() {
@@ -25,6 +25,7 @@ export default function Header() {
         </button>
         <nav className={open ? 'nav nav--open' : 'nav'} aria-label="Main navigation">
           {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
+          <HearthToggle />
           <Link className="nav-cta" href="/shop" onClick={() => setOpen(false)}>Enter the shop</Link>
         </nav>
       </div>
