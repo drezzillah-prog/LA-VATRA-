@@ -69,8 +69,10 @@ const needs = [
   },
 ] as const;
 
+type Need = (typeof needs)[number];
+
 export default function NeedFinder({ compact = false }: { compact?: boolean }) {
-  const [active, setActive] = useState(needs[0]);
+  const [active, setActive] = useState<Need>(needs[0]);
   return (
     <div className={compact ? 'need-finder need-finder--compact' : 'need-finder'}>
       <div className="need-options" role="list" aria-label="Choose what you need today">
