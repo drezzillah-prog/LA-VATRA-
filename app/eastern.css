@@ -1,0 +1,670 @@
+/* 
+   LA VATRA — Eastern European art direction
+   Old paper · carved walnut · fired clay · oxblood · Black Sea ink
+   Intentionally avoids sage/olive/forest-boho styling.
+*/
+
+:root{
+  --cream:#f3eadb;
+  --paper:#eadcc8;
+  --paper2:#dcc7ad;
+  --ink:#2c201c;
+  --muted:#705c50;
+  --terracotta:#9b4f37;
+  --rust:#7d332a;
+  --wood:#4a2d23;
+  --night:#211719;
+  --charcoal:#2b2221;
+  --sage:#695248;
+  --oxblood:#6f292d;
+  --sea:#5f6a76;
+  --old-gold:#a88456;
+  --line:rgba(67,43,32,.24);
+  --line-strong:rgba(67,43,32,.42);
+  --white:#fffaf1;
+  --shadow:0 28px 72px rgba(52,30,20,.16);
+}
+
+html,body{background:var(--cream)}
+body{
+  font-family:var(--body), Georgia, serif;
+  background:
+    radial-gradient(circle at 18% 7%,rgba(125,51,42,.035),transparent 23%),
+    radial-gradient(circle at 82% 18%,rgba(95,106,118,.035),transparent 20%),
+    linear-gradient(90deg,rgba(78,48,35,.018) 1px,transparent 1px),
+    var(--cream);
+  background-size:auto,auto,54px 54px,auto;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:999;
+  opacity:.26;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg width='130' height='130' viewBox='0 0 130 130' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+}
+
+h1,h2,h3,.wordmark,.footer-mark{
+  font-family:var(--display), "Times New Roman", serif;
+  font-weight:400;
+  letter-spacing:.005em;
+}
+h1{letter-spacing:-.012em}
+h2{letter-spacing:-.006em}
+h3{letter-spacing:.002em}
+p{letter-spacing:.002em}
+.large-copy{font-family:var(--body);font-size:21px;line-height:1.72}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:var(--body);
+  font-size:9px;
+  letter-spacing:.2em;
+  font-weight:600;
+  color:var(--rust);
+}
+.eyebrow:before{
+  content:"◆";
+  font-size:6px;
+  color:var(--oxblood);
+}
+.center>.eyebrow{justify-content:center}
+
+.section{position:relative}
+.section:where(.philosophy,.collection-section,.featured-products,.story-section):after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:min(1140px,calc(100% - 56px));
+  height:9px;
+  transform:translateX(-50%);
+  opacity:.34;
+  background:
+    linear-gradient(45deg,transparent 42%,var(--rust) 43% 56%,transparent 57%) 0 0/18px 9px,
+    linear-gradient(-45deg,transparent 42%,var(--rust) 43% 56%,transparent 57%) 9px 0/18px 9px;
+}
+
+/* Header — archival, restrained */
+.site-header{
+  background:rgba(243,234,219,.94);
+  border-bottom:3px double var(--line-strong);
+  backdrop-filter:blur(14px);
+}
+.header-inner{height:82px}
+.wordmark{
+  font-size:24px;
+  letter-spacing:.19em;
+  font-weight:400;
+  color:var(--wood);
+}
+.wordmark-flame{
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  color:var(--cream);
+  background:var(--oxblood);
+  font-size:10px;
+  transform:rotate(45deg);
+  border:1px solid rgba(255,255,255,.4);
+  box-shadow:0 0 0 4px rgba(111,41,45,.08);
+}
+.wordmark-flame::first-letter{transform:rotate(-45deg)}
+.nav{
+  font-family:var(--body);
+  font-size:9px;
+  letter-spacing:.14em;
+  font-weight:600;
+}
+.nav-cta{
+  background:var(--wood);
+  color:#f5e9d9;
+  border:1px solid var(--wood);
+  box-shadow:inset 0 0 0 3px rgba(244,232,217,.16);
+}
+.nav-cta:hover{background:var(--oxblood);border-color:var(--oxblood)}
+
+/* Buttons */
+.button{
+  min-height:52px;
+  font-family:var(--body);
+  font-size:9px;
+  letter-spacing:.15em;
+  border:1px solid var(--wood);
+  box-shadow:inset 0 0 0 3px rgba(74,45,35,.07);
+}
+.button--dark{background:var(--wood);color:#f5eadb}
+.button--dark:hover{background:var(--oxblood);border-color:var(--oxblood)}
+.button--ghost{background:rgba(255,250,241,.16)}
+.text-link{font-size:9px;letter-spacing:.15em;border-bottom:1px solid var(--rust)}
+
+/* Hero — book frontispiece / old house threshold */
+.hero{
+  min-height:860px;
+  color:var(--ink);
+  border-bottom:3px double var(--line-strong);
+  background:
+    radial-gradient(circle at 76% 30%,rgba(111,41,45,.08),transparent 23%),
+    linear-gradient(90deg,transparent 49.85%,rgba(92,55,39,.08) 50%,transparent 50.15%),
+    linear-gradient(135deg,#f7efe2 0%,#eadcc7 62%,#e4d0b6 100%);
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:22px;
+  border:1px solid rgba(92,55,39,.22);
+  pointer-events:none;
+}
+.hero:after{
+  content:"◆  ◆  ◆";
+  position:absolute;
+  top:39px;
+  left:50%;
+  transform:translateX(-50%);
+  color:var(--rust);
+  font-size:8px;
+  letter-spacing:16px;
+  opacity:.65;
+}
+.hero-grid{min-height:720px}
+.hero-copy{padding-left:22px}
+.hero-copy h1{
+  font-size:clamp(66px,8.5vw,118px);
+  line-height:.92;
+  max-width:720px;
+  text-shadow:0 1px rgba(255,255,255,.55);
+}
+.hero-copy h1 em{
+  color:var(--oxblood);
+  font-style:normal;
+  position:relative;
+}
+.hero-copy h1 em:after{
+  content:"";
+  position:absolute;
+  left:1%;
+  right:1%;
+  bottom:-8px;
+  height:7px;
+  opacity:.32;
+  background:
+    linear-gradient(45deg,transparent 38%,var(--rust) 39% 58%,transparent 59%) 0 0/16px 7px,
+    linear-gradient(-45deg,transparent 38%,var(--rust) 39% 58%,transparent 59%) 8px 0/16px 7px;
+}
+.hero-lead{
+  font-family:var(--body);
+  font-size:19px;
+  line-height:1.75;
+  max-width:590px;
+  color:#5e4c42;
+}
+.hero-object{height:620px}
+.arch{border-radius:185px 185px 5px 5px}
+.arch-back{
+  background:#d3b998;
+  border:1px solid #8e674f;
+  box-shadow:inset 0 0 0 9px rgba(65,37,27,.05);
+}
+.arch-main{
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.014) 0 2px,transparent 2px 9px),
+    linear-gradient(155deg,#5a382a,#301f1b 72%);
+  border:1px solid #2a1915;
+  outline:1px solid rgba(239,218,191,.38);
+  outline-offset:-12px;
+  box-shadow:0 28px 65px rgba(47,28,20,.22);
+}
+.arch-main:before{
+  inset:28px 22px;
+  border:1px solid rgba(242,221,194,.28);
+  box-shadow:
+    inset 0 0 0 8px rgba(244,225,201,.035),
+    inset 0 0 0 9px rgba(244,225,201,.18);
+}
+.arch-main span{
+  font-family:var(--display);
+  font-size:17px;
+  letter-spacing:.22em;
+}
+.arch-main b{
+  color:#c87755;
+  font-size:48px;
+  margin:34px 0;
+}
+.arch-main small{
+  max-width:250px;
+  text-align:center;
+  line-height:1.9;
+  letter-spacing:.18em;
+  color:#d9c1aa;
+}
+.embroidered-line{
+  width:195px;
+  height:92px;
+  opacity:.5;
+  background:
+    linear-gradient(45deg,transparent 40%,var(--oxblood) 41% 52%,transparent 53%) 0 0/22px 22px,
+    linear-gradient(-45deg,transparent 40%,var(--oxblood) 41% 52%,transparent 53%) 11px 0/22px 22px;
+}
+.hero-note{
+  border-top:3px double var(--line-strong);
+  font-family:var(--body);
+}
+.hero-note span{font-family:var(--display);font-size:15px;font-weight:400}
+
+/* Philosophy / old paper */
+.philosophy{
+  background:
+    linear-gradient(rgba(255,255,255,.16),rgba(255,255,255,.16)),
+    var(--paper);
+}
+.philosophy h2{color:var(--wood)}
+.ornament svg{stroke:var(--oxblood)}
+
+/* Need finder — archive drawers */
+.need-section,.need-shop-section{
+  background:
+    linear-gradient(90deg,rgba(74,45,35,.025) 1px,transparent 1px),
+    #ddc8ae;
+  background-size:36px 36px;
+}
+.need-finder{
+  background:#efe3d1;
+  border:3px double var(--line-strong);
+  box-shadow:0 18px 50px rgba(64,39,27,.08);
+}
+.need-options{border-color:var(--line-strong)}
+.need-chip{
+  font-family:var(--display);
+  color:var(--ink);
+  font-size:22px;
+}
+.need-chip:hover,.need-chip--active{color:var(--oxblood)}
+.need-chip:before{background:var(--oxblood)}
+.need-result{
+  background:
+    radial-gradient(circle at 80% 20%,rgba(111,41,45,.06),transparent 25%),
+    #eadcc8;
+}
+.need-result h3{color:var(--wood)}
+.need-room{color:var(--oxblood)}
+.need-product{
+  background:#f3e8d7;
+  border:1px solid var(--line-strong);
+  box-shadow:inset 0 0 0 5px rgba(83,49,34,.035);
+}
+.need-product:before{color:var(--oxblood)}
+.need-product strong{font-family:var(--display);font-weight:400}
+
+/* Collections — museum folios, no green */
+.collection-section{background:#f1e7d8}
+.collection-grid{border-color:var(--line-strong)}
+.collection-card{
+  background:#eadcc8;
+  border-color:var(--line-strong);
+  box-shadow:none;
+}
+.collection-card:hover{
+  background:#f2e8d9;
+  box-shadow:0 20px 44px rgba(58,33,22,.1);
+}
+.collection-art{border-color:var(--line-strong)}
+.collection-number{font-size:104px;font-family:var(--display);opacity:.14}
+.symbol-grid{opacity:.42}
+.collection-copy h3{font-size:34px;color:var(--wood)}
+.collection-copy>p:not(.eyebrow){color:#735e52}
+.collection-card--healing .collection-art{background:#cbb0a4;color:#733e3c}
+.collection-card--mystical{
+  background:#2c2223;
+  color:#efe1d0;
+}
+.collection-card--mystical .collection-art{background:#211819;color:#b97662}
+.collection-card--mystical .collection-copy h3{color:#f1dfcf}
+.collection-card--mystical .collection-copy>p:not(.eyebrow){color:#c5b4aa}
+.collection-card--productivity .collection-art{background:#c8c2bb;color:#5f5150}
+.collection-card--culture .collection-art{background:#a3543d;color:#f4dfc5}
+
+/* Signature */
+.signature-section{
+  background:
+    radial-gradient(circle at 17% 28%,rgba(111,41,45,.055),transparent 24%),
+    #e3d1ba;
+}
+.planner-stack--back{background:#9a6a52}
+.planner-stack--mid{background:#c8a889}
+.planner-cover{
+  background:
+    linear-gradient(rgba(255,255,255,.14),rgba(255,255,255,.14)),
+    #efe1cd;
+  border:1px solid #8b6049;
+  box-shadow:0 28px 60px rgba(58,33,22,.18);
+}
+.planner-cover:after{
+  inset:13px;
+  border:3px double rgba(92,55,39,.34);
+}
+.planner-cover h3{color:var(--wood)}
+.cover-symbol{color:var(--oxblood)}
+.tick-list li:before{color:var(--oxblood)}
+
+/* Product shelves — folios, archival labels */
+.featured-products,.shop-products{background:#f4eadc}
+.product-grid{gap:22px}
+.product-card{
+  background:#ede0ce;
+  border:1px solid var(--line-strong);
+  box-shadow:0 6px 0 rgba(74,45,35,.025);
+}
+.product-card:hover{
+  transform:translateY(-6px) rotate(.15deg);
+  box-shadow:0 24px 54px rgba(56,33,23,.12);
+}
+.product-visual{height:365px;border-bottom:1px solid var(--line-strong)}
+.product-card--healing .product-visual{background:#c9afa4}
+.product-card--mystical .product-visual{background:#241b1d}
+.product-card--productivity .product-visual{background:#c8c2ba}
+.product-card--culture .product-visual{background:#9c4b36}
+.paper-object{
+  width:70%;
+  height:75%;
+  background:#f3e6d3;
+  border:1px solid #8e6a53;
+  box-shadow:8px 10px 0 rgba(84,50,35,.09),0 18px 35px rgba(45,27,20,.16);
+}
+.paper-object:after{
+  inset:8px;
+  border:3px double rgba(82,50,35,.22);
+}
+.paper-object b{
+  font-family:var(--display);
+  font-weight:400;
+  color:var(--wood);
+}
+.product-card--mystical .paper-object{
+  background:#21191b;
+  border-color:#7d554a;
+}
+.product-card--mystical .paper-object b{color:#ead7c8}
+.product-card-copy h3{font-size:31px;color:var(--wood)}
+.product-card--mystical .product-card-copy h3{color:#ead7c8}
+.product-badge{color:var(--oxblood)}
+.product-foot{border-color:var(--line-strong)}
+
+/* Name / manifesto band */
+.meaning-section{
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.025),transparent 45%),
+    var(--oxblood);
+  color:#f5e5d2;
+}
+.meaning-word{
+  border:3px double rgba(255,236,216,.42);
+  position:relative;
+}
+.meaning-word:before,.meaning-word:after{
+  content:"◆";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  color:#d7a878;
+  font-size:9px;
+}
+.meaning-word:before{top:26px}
+.meaning-word:after{bottom:26px}
+.meaning-word strong{font-size:106px}
+.meaning-copy .eyebrow{color:#e2b58a}
+.meaning-copy .eyebrow:before{color:#e2b58a}
+
+/* Story panels */
+.story-section{background:#e9dbc7}
+.visual-panel{border:1px solid var(--line-strong)}
+.visual-panel--paper{background:linear-gradient(140deg,#ead9c0,#cbb394)}
+.visual-panel--wood{
+  background:repeating-linear-gradient(91deg,#523225 0 4px,#472b21 4px 9px,#654231 9px 15px);
+}
+.visual-panel--sea{
+  background:linear-gradient(#667381 0 54%,#3f4a56 54% 57%,#c19a72 57%);
+  color:#f7ecdf;
+}
+.visual-frame{border:3px double currentColor}
+.visual-emblem b{color:#c87454}
+.cabinet-teaser{
+  background:#eee1cf;
+  border:3px double var(--line-strong);
+}
+.cabinet-mark{color:var(--oxblood)}
+
+/* Difference / testimonial / newsletter */
+.difference-section{background:#e4d2ba}
+.difference-grid{border-color:var(--line-strong)}
+.difference-grid article{border-color:var(--line-strong)}
+.difference-grid span{color:var(--oxblood)}
+.testimonial-section{
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),
+    #38241f;
+  background-size:42px 42px;
+  color:#f2e2cf;
+}
+.testimonial-section .eyebrow{color:#d99472}
+.testimonial-section .eyebrow:before{color:#d99472}
+.newsletter{
+  background:#cfb79a;
+  border-top:3px double var(--line-strong);
+}
+.newsletter-form input{
+  background:#efe0cd;
+  border-color:var(--wood);
+}
+.newsletter-form button{background:var(--wood);border-color:var(--wood)}
+
+/* Footer */
+.footer{
+  background:#241917;
+  color:#ead9c7;
+  border-top:5px solid var(--oxblood);
+}
+.footer-mark{font-size:47px;letter-spacing:.14em}
+.footer-grid h3{color:#c98564}
+.footer-grid a,.footer-grid .social-placeholder{color:#cbb8a7}
+
+/* Generic page heroes */
+.page-hero,.page-hero--shop{
+  background:
+    radial-gradient(circle at 80% 25%,rgba(111,41,45,.06),transparent 25%),
+    linear-gradient(130deg,#ead9c2,#d8bfa1);
+  border-bottom:3px double var(--line-strong);
+}
+.page-hero--about{
+  background:
+    radial-gradient(circle at 73% 26%,rgba(185,111,72,.12),transparent 25%),
+    linear-gradient(125deg,#291b18,#5a3428);
+}
+.page-hero h1{letter-spacing:-.01em}
+.values-band{background:var(--oxblood)}
+.shop-products{background:#efe4d4}
+
+/* Collection detail pages */
+.collection-hero--healing{background:#cbb3a8}
+.collection-hero--mystical{background:#241a1d}
+.collection-hero--productivity{background:#c9c2b9}
+.collection-hero--culture{background:#9f4e38}
+.collection-manifesto{border:3px double currentColor}
+
+/* Product detail */
+.product-detail-hero{background:#eadfce}
+.gallery-main{background:#c3a98c;border:1px solid var(--line-strong)}
+.product-detail-hero--productivity .gallery-main{background:#c6c0b8}
+.product-detail-hero--culture .gallery-main{background:#984b37}
+.large-paper-object{
+  background:#f1e4d1;
+  border:1px solid #8c654f;
+}
+.large-paper-object:after{border:3px double rgba(74,45,35,.26)}
+
+/* The House — actual house, not boho */
+.house-hero{
+  background:
+    radial-gradient(circle at 73% 38%,rgba(177,92,55,.16),transparent 24%),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 2px,transparent 2px 10px),
+    linear-gradient(135deg,#261a18,#533228 56%,#211715);
+}
+.house-hero:after{
+  border:3px double rgba(244,225,200,.26);
+  box-shadow:inset 0 0 0 12px rgba(244,225,200,.025),0 0 90px rgba(177,80,48,.09);
+}
+.house-plan{
+  background:
+    linear-gradient(90deg,rgba(74,45,35,.02) 1px,transparent 1px),
+    #eadcc8;
+  background-size:44px 44px;
+}
+.room-grid{border-color:var(--line-strong)}
+.room-card{
+  background:#ecdfcd;
+  border-color:var(--line-strong);
+}
+.room-card--quiet .room-door{background:#c7aea3;color:#713c3c}
+.room-card--worktable .room-door{background:#c8c0b7;color:#594d49}
+.room-card--ancestral .room-door{background:#9f523d;color:#f1d9bf}
+.room-card--midnight{background:#281e20;color:#edddcf}
+.room-copy h2{color:var(--wood)}
+.room-card--midnight .room-copy h2{color:#edddcf}
+.house-threshold{background:#d7bfa1}
+
+/* Cabinet of Symbols — museum/archive */
+.symbols-hero{
+  background:
+    linear-gradient(90deg,rgba(74,45,35,.025) 1px,transparent 1px),
+    linear-gradient(120deg,#d5bda0,#eee2d0 62%,#cbb091);
+  background-size:38px 38px,auto;
+  border-bottom:3px double var(--line-strong);
+}
+.symbol-cabinet{background:#e8d8c2}
+.symbol-grid-list{border-color:var(--line-strong)}
+.symbol-drawer{
+  background:#eee1cf;
+  border-color:var(--line-strong);
+}
+.symbol-drawer:hover{background:#f5eadc}
+.symbol-mark{
+  color:var(--oxblood);
+  border-color:var(--line-strong);
+}
+.symbol-copy h2{color:var(--wood)}
+.symbols-note{background:#3c2922}
+
+/* Contact / forms */
+.contact-page{background:#eadcc8}
+.contact-form{
+  background:#f0e4d3;
+  border:3px double var(--line-strong);
+}
+.contact-form input,.contact-form textarea,.contact-form select{
+  background:#f5ebdd;
+  border-color:var(--line-strong);
+}
+
+/* Evening Hearth — ember, walnut, oxblood. No green anywhere. */
+html[data-hearth="evening"]{
+  --cream:#191313;
+  --paper:#221918;
+  --paper2:#2d201c;
+  --ink:#f0dfcc;
+  --muted:#bba796;
+  --terracotta:#c56d4d;
+  --rust:#a34d3d;
+  --wood:#6a4432;
+  --sage:#72534b;
+  --oxblood:#943e43;
+  --sea:#65717e;
+  --line:rgba(240,220,197,.15);
+  --line-strong:rgba(240,220,197,.28);
+}
+html[data-hearth="evening"] body{
+  background:
+    radial-gradient(circle at 22% 10%,rgba(148,62,67,.08),transparent 26%),
+    #191313;
+}
+html[data-hearth="evening"] .site-header{background:rgba(25,19,19,.94)}
+html[data-hearth="evening"] .hero{
+  background:
+    radial-gradient(circle at 74% 36%,rgba(196,92,55,.21),transparent 22%),
+    linear-gradient(90deg,transparent 49.85%,rgba(239,215,190,.035) 50%,transparent 50.15%),
+    linear-gradient(140deg,#171111,#2b1c19 56%,#171112);
+}
+html[data-hearth="evening"] .philosophy,
+html[data-hearth="evening"] .collection-section,
+html[data-hearth="evening"] .featured-products,
+html[data-hearth="evening"] .story-section,
+html[data-hearth="evening"] .need-section,
+html[data-hearth="evening"] .need-shop-section{background:#1b1414}
+html[data-hearth="evening"] .signature-section,
+html[data-hearth="evening"] .difference-section,
+html[data-hearth="evening"] .shop-products,
+html[data-hearth="evening"] .related-section{background:#241a18}
+html[data-hearth="evening"] .need-finder,
+html[data-hearth="evening"] .need-result,
+html[data-hearth="evening"] .cabinet-teaser,
+html[data-hearth="evening"] .collection-card,
+html[data-hearth="evening"] .product-card,
+html[data-hearth="evening"] .room-card,
+html[data-hearth="evening"] .symbol-drawer{background:#241a18}
+html[data-hearth="evening"] .need-product{background:#2a1e1a}
+html[data-hearth="evening"] .collection-card--mystical,
+html[data-hearth="evening"] .room-card--midnight{background:#151012}
+html[data-hearth="evening"] .house-plan,
+html[data-hearth="evening"] .symbol-cabinet{background:#1b1413}
+html[data-hearth="evening"] .house-threshold{background:#2c201a}
+html[data-hearth="evening"] .symbols-hero,
+html[data-hearth="evening"] .page-hero,
+html[data-hearth="evening"] .page-hero--shop,
+html[data-hearth="evening"] .contact-page{
+  background:
+    radial-gradient(circle at 72% 28%,rgba(148,62,67,.13),transparent 25%),
+    linear-gradient(130deg,#1d1514,#33231d);
+}
+html[data-hearth="evening"] .collection-copy h3,
+html[data-hearth="evening"] .product-card-copy h3,
+html[data-hearth="evening"] .room-copy h2,
+html[data-hearth="evening"] .symbol-copy h2,
+html[data-hearth="evening"] .need-result h3{color:#f0dfcc}
+html[data-hearth="evening"] .planner-cover,
+html[data-hearth="evening"] .paper-object,
+html[data-hearth="evening"] .large-paper-object{background:#ead9c4;color:#2c201c}
+html[data-hearth="evening"] .product-card--mystical .paper-object{background:#211719;color:#ead8c7}
+html[data-hearth="evening"] .product-card--mystical .paper-object b{color:#ead8c7}
+
+/* Remove remaining muddy green / olive traces */
+.collection-card--productivity .collection-art,
+.product-card--productivity .product-visual,
+.product-detail-hero--productivity .gallery-main,
+.room-card--worktable .room-door{filter:none}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero:before{inset:12px}
+  .hero-copy{padding-left:0}
+  .hero-grid{padding-top:72px}
+}
+@media(max-width:720px){
+  .site-header{border-bottom-width:3px}
+  .header-inner{height:72px}
+  .wordmark{font-size:21px}
+  .hero{min-height:760px}
+  .hero:before{inset:9px}
+  .hero:after{top:25px}
+  .hero-copy h1{font-size:58px}
+  .hero-lead{font-size:17px}
+  .arch-main,.arch-back{width:310px}
+  .arch-main{right:8px}
+  .arch-back{right:-25px}
+  .section:where(.philosophy,.collection-section,.featured-products,.story-section):after{width:calc(100% - 36px)}
+  .collection-copy h3{font-size:31px}
+}
