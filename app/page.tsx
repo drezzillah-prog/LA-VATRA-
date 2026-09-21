@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import CollectionCard from '@/components/CollectionCard';
+import NeedFinder from '@/components/NeedFinder';
 import Newsletter from '@/components/Newsletter';
 import Ornament from '@/components/Ornament';
 import ProductCard from '@/components/ProductCard';
@@ -17,7 +18,10 @@ export default function Home() {
             <p className="eyebrow">Born from the idea of the hearth</p>
             <h1>Things to keep<br /><em>close to the fire.</em></h1>
             <p className="hero-lead">La Vatra creates digital and printable objects for inner life, everyday ritual and cultural memory — made with the warmth of home and the clarity of modern design.</p>
-            <div className="button-row"><Link className="button button--dark" href="/shop">Explore the collections</Link><Link className="button button--ghost" href="/about">Read our story</Link></div>
+            <div className="button-row">
+              <Link className="button button--dark" href="/house">Enter the House</Link>
+              <Link className="button button--ghost" href="/shop">Shop the collections</Link>
+            </div>
           </div>
           <div className="hero-object" aria-hidden="true">
             <div className="arch arch-back" />
@@ -37,10 +41,21 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="need-section">
+        <div className="shell">
+          <div className="section-heading split">
+            <div><p className="eyebrow">Shop by feeling</p><h2>What do you need today?</h2></div>
+            <p>You do not need to know whether you want a planner, journal or print. Start with the feeling; we will show you a door.</p>
+          </div>
+          <NeedFinder />
+        </div>
+      </section>
+
       <section className="section collection-section">
         <div className="shell">
           <div className="section-heading split"><div><p className="eyebrow">Four worlds, one hearth</p><h2>Choose the room you need.</h2></div><p>Different moods. One visual language: thoughtful, tactile, culturally grounded and made to be lived with.</p></div>
           <div className="collection-grid">{collections.map((collection) => <CollectionCard key={collection.slug} collection={collection} />)}</div>
+          <div className="room-link-row"><Link className="text-link" href="/house">Walk through Casa Vetrei <span>→</span></Link></div>
         </div>
       </section>
 
@@ -73,7 +88,15 @@ export default function Home() {
       </section>
 
       <section className="section story-section">
-        <div className="shell"><div className="section-heading center narrow"><p className="eyebrow">Memory / Craft / Belonging</p><h2>A visual language built from traces.</h2></div><div className="story-panels"><VisualPanel label="01 · MEMORY" title="Paper, handwriting, inherited objects" variant="paper" /><VisualPanel label="02 · CRAFT" title="Embroidery, carving, repetition by hand" variant="wood" /><VisualPanel label="03 · BELONGING" title="House, landscape, ritual, return" variant="sea" /></div></div>
+        <div className="shell">
+          <div className="section-heading center narrow"><p className="eyebrow">Memory / Craft / Belonging</p><h2>A visual language built from traces.</h2></div>
+          <div className="story-panels"><VisualPanel label="01 · MEMORY" title="Paper, handwriting, inherited objects" variant="paper" /><VisualPanel label="02 · CRAFT" title="Embroidery, carving, repetition by hand" variant="wood" /><VisualPanel label="03 · BELONGING" title="House, landscape, ritual, return" variant="sea" /></div>
+          <div className="cabinet-teaser">
+            <div className="cabinet-mark" aria-hidden="true">✣</div>
+            <div><p className="eyebrow">Cabinet of Symbols</p><h3>See what the marks are made of.</h3><p>Open the drawers behind the ember, woven geometry, carved forms, paper grain, the threshold and the Black Sea horizon.</p></div>
+            <Link className="button button--ghost" href="/symbols">Open the cabinet</Link>
+          </div>
+        </div>
       </section>
 
       <section className="section difference-section">
