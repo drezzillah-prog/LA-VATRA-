@@ -1,12 +1,22 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Inter } from 'next/font/google';
+import { Forum, Literata } from 'next/font/google';
 import './globals.css';
 import './experience.css';
+import './eastern.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const display = Cormorant_Garamond({ subsets: ['latin'], variable: '--font-display', weight: ['400', '500', '600', '700'] });
-const body = Inter({ subsets: ['latin'], variable: '--font-body' });
+const display = Forum({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-display',
+  weight: '400',
+});
+
+const body = Literata({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-body',
+  weight: ['400', '500', '600'],
+});
 
 export const metadata: Metadata = {
   title: { default: 'La Vatra — Objects for inner life & cultural memory', template: '%s — La Vatra' },
