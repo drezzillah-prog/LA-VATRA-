@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
+import './experience.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -13,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${display.variable} ${body.variable}`}><Header /><main>{children}</main><Footer /></body></html>;
+  return <html lang="en" suppressHydrationWarning><body className={`${display.variable} ${body.variable}`}><Header /><main>{children}</main><Footer /></body></html>;
 }
