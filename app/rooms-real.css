@@ -75,7 +75,7 @@ html[data-hearth="evening"] .site-header,.site-header{background:rgba(246,241,23
 .room-door-card--kitchen{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/RO%20B%20Village%20Museum%20Fundu%20Moldovei%20household%20summer%20kitchen.jpg?width=1800")}
 .room-door-card--bedroom{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Romanian%20farmhouse%20bedroom%20%288053014190%29.jpg?width=1800")}
 .room-door-card--pantry{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/RO%20B%20Village%20Museum%20Suici%20household%20stable%20and%20storage%20room.jpg?width=1800")}
-.room-door-card--barn{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20%C8%98ur%C4%83%20in%20Racovi%C8%9Ba%2C%20Sibiu.jpg?width=1800"),linear-gradient(135deg,#6c4d39,#2f251f)}
+.room-door-card--barn{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Racovita%20%28Sibiu%29%20-%20SURA.jpg?width=1800"),linear-gradient(135deg,#6c4d39,#2f251f)}
 .room-door-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,10,.05) 15%,rgba(27,17,13,.82) 100%);transition:.3s}
 .room-door-card:hover .room-door-shade{background:linear-gradient(180deg,rgba(20,14,10,.0) 15%,rgba(27,17,13,.7) 100%)}
 .room-door-copy{position:relative;z-index:2;color:#FFF8EC;padding:48px;max-width:620px}
@@ -93,7 +93,7 @@ html[data-hearth="evening"] .site-header,.site-header{background:rgba(246,241,23
 .real-room-hero--kitchen{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/RO%20B%20Village%20Museum%20Fundu%20Moldovei%20household%20summer%20kitchen.jpg?width=2200")}
 .real-room-hero--bedroom{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Romanian%20farmhouse%20bedroom%20%288053014190%29.jpg?width=2200")}
 .real-room-hero--pantry{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/RO%20B%20Village%20Museum%20Suici%20household%20stable%20and%20storage%20room.jpg?width=2200")}
-.real-room-hero--barn{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/RO%20B%20Village%20Museum%20Straja%20household.jpg?width=2200")}
+.real-room-hero--barn{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Racovita%20%28Sibiu%29%20-%20SURA.jpg?width=2200")}
 .real-room-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,20,15,.12) 0%,rgba(36,23,17,.28) 42%,rgba(31,19,15,.88) 100%)}
 .real-room-copy{position:relative;z-index:2;padding-bottom:80px}
 .real-room-copy .eyebrow{color:#F1C29A}

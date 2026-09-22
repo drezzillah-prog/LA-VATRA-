@@ -11,7 +11,7 @@ export default function CreditsPage() {
           <li><strong>Bucătăria:</strong> “RO B Village Museum Fundu Moldovei household summer kitchen.jpg”, Andrei Stroe, Wikimedia Commons, CC BY-SA.</li>
           <li><strong>Dormitorul:</strong> “Romanian farmhouse bedroom (8053014190).jpg”, Thomas Quine, Wikimedia Commons, CC BY 2.0.</li>
           <li><strong>Cămara:</strong> “RO B Village Museum Suici household stable and storage room.jpg”, Andrei Stroe, Wikimedia Commons, CC BY-SA.</li>
-          <li><strong>Hambarul:</strong> imagery from the Wikimedia Commons category “Interiors of barns in Romania”.</li>
+          <li><strong>Hambarul:</strong> “Racovita (Sibiu) - SURA.jpg”, Asybaris01, Wikimedia Commons, CC BY 3.0.</li>
         </ul>
       </div>
     </section>
