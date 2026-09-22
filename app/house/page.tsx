@@ -3,45 +3,49 @@ import Newsletter from '@/components/Newsletter';
 import Ornament from '@/components/Ornament';
 
 export const metadata = {
-  title: 'The House',
-  description: 'Enter Casa Vetrei: four rooms for restoration, mystery, structure and cultural memory.',
+  title: 'Casa Vetrei',
+  description: 'Enter Casa Vetrei through four ordinary rooms: the kitchen, bedroom, pantry and barn.',
 };
 
 const rooms = [
   {
     number: 'I',
-    key: 'quiet',
-    name: 'The Quiet Room',
+    key: 'kitchen',
+    ro: 'Bucătăria',
+    en: 'The Kitchen',
     collection: 'Emotional / Healing',
     href: '/collections/emotional-healing',
-    invitation: 'Come here when everything has been too loud.',
-    objects: 'Journals · reflection pages · small rituals',
+    invitation: 'The warmest room in the house: a table, a stove, something simmering, a notebook left open between ordinary things.',
+    objects: 'Journals · reflection pages · gentle rituals',
   },
   {
     number: 'II',
-    key: 'midnight',
-    name: 'The Midnight Room',
+    key: 'bedroom',
+    ro: 'Dormitorul',
+    en: 'The Bedroom',
     collection: 'Dark / Mystical / Fantasy',
     href: '/collections/dark-mystical-fantasy',
-    invitation: 'For the thoughts that only arrive after the rest of the house sleeps.',
+    invitation: 'Curtains drawn, embroidered linen, the last candle still awake. A room for dreams, symbols and thoughts kept after dark.',
     objects: 'Ritual journals · nocturne editions · symbolic art',
   },
   {
     number: 'III',
-    key: 'worktable',
-    name: 'The Worktable',
+    key: 'pantry',
+    ro: 'Cămara',
+    en: 'The Pantry',
     collection: 'Productivity / Clean',
     href: '/collections/productivity-clean',
-    invitation: 'A clear surface. A pencil. Enough order to begin.',
-    objects: 'Planners · weekly systems · gentle discipline',
+    invitation: 'Shelves, labels, provisions, everything in its place. Not perfection — simply knowing where things belong.',
+    objects: 'Planners · weekly systems · practical pages',
   },
   {
     number: 'IV',
-    key: 'ancestral',
-    name: 'The Ancestral Room',
+    key: 'barn',
+    ro: 'Hambarul',
+    en: 'The Barn',
     collection: 'European Culture',
     href: '/collections/european-culture',
-    invitation: 'Where place, inherited beauty and the memory of making things by hand remain visible.',
+    invitation: 'Timber, grain, seasons and things stored because they will matter again. The part of the household that remembers the year.',
     objects: 'Calendars · prints · heritage editions · wallpapers',
   },
 ] as const;
@@ -53,8 +57,8 @@ export default function HousePage() {
         <div className="house-hero-grain" aria-hidden="true" />
         <div className="shell house-hero-inner">
           <p className="eyebrow">Casa Vetrei · The House</p>
-          <h1>Enter by the room<br />you need today.</h1>
-          <p>La Vatra is organised like a house rather than a department store. Each room holds a different kind of object, mood and attention.</p>
+          <h1>Intră în casă.<br />Alege o odaie.</h1>
+          <p>Not four abstract moods and not four shop tabs. A kitchen, a bedroom, a pantry and a barn — ordinary rooms, used and lived in.</p>
           <div className="house-key" aria-hidden="true"><span>✦</span><i /></div>
         </div>
       </section>
@@ -62,23 +66,28 @@ export default function HousePage() {
       <section className="house-plan">
         <div className="shell">
           <div className="house-plan-intro">
-            <span>THE FLOOR PLAN</span>
-            <p>You do not have to know what product you are looking for. Start with the room that feels closest.</p>
+            <span>ODAILE CASEI · THE ROOMS</span>
+            <p>Walk in as you would in an old house: by the room, not by the product category.</p>
           </div>
-          <div className="room-grid">
+
+          <div className="room-grid room-grid--lived-in">
             {rooms.map((room) => (
-              <Link href={room.href} key={room.key} className={`room-card room-card--${room.key}`}>
-                <div className="room-door" aria-hidden="true">
-                  <span>{room.number}</span>
-                  <div className="door-mark">✦</div>
-                  <i />
+              <Link href={room.href} key={room.key} className={\`room-card room-card--\${room.key}\`}>
+                <div className="room-scene" aria-hidden="true">
+                  <span className="room-number">{room.number}</span>
+                  <i className="scene-main" />
+                  <i className="scene-detail scene-detail--a" />
+                  <i className="scene-detail scene-detail--b" />
+                  <i className="scene-detail scene-detail--c" />
                 </div>
+
                 <div className="room-copy">
                   <span className="room-collection">{room.collection}</span>
-                  <h2>{room.name}</h2>
+                  <h2>{room.ro}</h2>
+                  <em className="room-translation">{room.en}</em>
                   <p>{room.invitation}</p>
                   <small>{room.objects}</small>
-                  <b>Enter the room →</b>
+                  <b>Intră în odaie →</b>
                 </div>
               </Link>
             ))}
@@ -89,17 +98,18 @@ export default function HousePage() {
       <section className="house-threshold">
         <div className="shell house-threshold-grid">
           <div>
-            <p className="eyebrow">At the threshold</p>
-            <h2>Nothing in the house is only decoration.</h2>
+            <p className="eyebrow">La prag · At the threshold</p>
+            <h2>A house is made from use, not decoration.</h2>
           </div>
           <div>
-            <p>Objects are chosen for what they help you do: remember, organise, write, notice, recover, keep or pass forward.</p>
-            <p>The cultural references are treated the same way. They are part of the material language of La Vatra, not costume laid over a generic product.</p>
+            <p>La Vatra treats objects the same way. A journal is something left on the table. A planner belongs near the provisions and lists. A calendar follows the seasons. A dark notebook waits beside the bed.</p>
+            <p>Romanian and Eastern European references appear through materials, rhythm, colour and domestic memory — never as costume laid over a generic shop.</p>
             <Link className="text-link" href="/symbols">Open the Cabinet of Symbols <span>→</span></Link>
           </div>
         </div>
         <Ornament />
       </section>
+
       <Newsletter />
     </>
   );
