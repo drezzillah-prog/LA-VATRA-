@@ -3,6 +3,7 @@ import { Forum, Literata } from 'next/font/google';
 import './globals.css';
 import './experience.css';
 import './eastern.css';
+import './reborn.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
