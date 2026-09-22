@@ -72,7 +72,7 @@ export default function HousePage() {
 
           <div className="room-grid room-grid--lived-in">
             {rooms.map((room) => (
-              <Link href={room.href} key={room.key} className={\`room-card room-card--\${room.key}\`}>
+              <Link href={room.href} key={room.key} className={`room-card room-card--${room.key}`}>
                 <div className="room-scene" aria-hidden="true">
                   <span className="room-number">{room.number}</span>
                   <i className="scene-main" />
