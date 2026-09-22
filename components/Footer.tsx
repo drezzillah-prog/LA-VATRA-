@@ -17,6 +17,7 @@ export default function Footer() {
             <Link href="/shop">Shop collections</Link>
             <Link href="/symbols">Cabinet of Symbols</Link>
             <Link href="/about">Our story</Link>
+            <Link href="/credits">Image credits</Link>
           </div>
           <div>
             <h3>Keep close</h3>

@@ -1,0 +1,129 @@
+/* REAL ROOMS — photographed Romanian interiors + horizontal room tabs */
+:root{
+  --cream:#F6F1E7;
+  --paper:#EADFCB;
+  --paper2:#D8C5A7;
+  --ink:#2B211C;
+  --muted:#6D5B50;
+  --terracotta:#B5533C;
+  --rust:#93402E;
+  --wood:#4A3428;
+  --night:#2B211C;
+  --charcoal:#302722;
+  --sage:#4D6D8A;
+  --oxblood:#7A2E3A;
+  --sea:#4D6D8A;
+  --cobalt:#4D6D8A;
+  --old-gold:#B78B50;
+  --line:rgba(74,52,40,.20);
+  --line-strong:rgba(74,52,40,.34);
+}
+html{background:var(--cream)!important}
+html[data-hearth="evening"]{--cream:#F6F1E7;--paper:#EADFCB;--paper2:#D8C5A7;--ink:#2B211C;--muted:#6D5B50;--terracotta:#B5533C;--rust:#93402E;--wood:#4A3428;--night:#2B211C;--charcoal:#302722;--sage:#4D6D8A;--oxblood:#7A2E3A;--sea:#4D6D8A;--cobalt:#4D6D8A}
+html[data-hearth="evening"] body,body{background:var(--cream)!important;color:var(--ink)!important}
+html[data-hearth="evening"] .site-header,.site-header{background:rgba(246,241,231,.97)!important;border-bottom:1px solid rgba(74,52,40,.18)!important}
+.wordmark{color:var(--wood)!important}.wordmark-flame{background:var(--oxblood)!important;color:var(--cream)!important}
+.nav-cta{background:var(--oxblood)!important;border-color:var(--oxblood)!important;color:var(--cream)!important}
+
+/* top horizontal room tabs */
+.room-strip{
+  position:sticky;
+  top:82px;
+  z-index:46;
+  background:var(--wood);
+  border-bottom:4px solid var(--terracotta);
+  box-shadow:0 8px 18px rgba(43,33,28,.13);
+}
+.room-strip-inner{min-height:66px;display:flex;align-items:stretch;gap:22px}
+.room-strip-title{
+  flex:0 0 auto;
+  display:flex;align-items:center;
+  font-size:9px;font-weight:700;letter-spacing:.18em;
+  color:#E9D9C4;
+  padding-right:18px;
+  border-right:1px solid rgba(255,255,255,.18);
+}
+.room-strip-scroll{display:flex;align-items:stretch;overflow-x:auto;scrollbar-width:none;flex:1}
+.room-strip-scroll::-webkit-scrollbar{display:none}
+.room-tab{
+  min-width:150px;
+  flex:1 0 150px;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:10px 20px;
+  border-right:1px solid rgba(255,255,255,.12);
+  color:#F6F1E7;
+  transition:.2s;
+}
+.room-tab strong{font-family:var(--display);font-size:20px;font-weight:400;line-height:1}
+.room-tab small{margin-top:5px;font-size:7px;letter-spacing:.16em;text-transform:uppercase;color:#D9C6B0}
+.room-tab:hover,.room-tab--active{background:var(--oxblood)}
+.room-tab--active{box-shadow:inset 0 -4px 0 var(--old-gold)}
+
+/* house landing */
+.house-intro-real{
+  min-height:430px;display:flex;align-items:center;
+  background:linear-gradient(110deg,#F6F1E7 0 65%,#E4D4BC 65%);
+  border-bottom:1px solid var(--line);
+}
+.house-intro-real h1{font-size:clamp(64px,9vw,120px);line-height:.88;color:var(--wood);margin:20px 0}
+.house-intro-real>div>p:last-child{font-family:var(--display);font-size:22px;max-width:560px}
+.room-door-grid{display:grid;grid-template-columns:repeat(2,1fr);background:var(--wood);gap:3px;padding:3px}
+.room-door-card{
+  min-height:620px;position:relative;display:flex;align-items:flex-end;overflow:hidden;
+  background-size:cover;background-position:center;
+}
+.room-door-card--kitchen{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/RO%20B%20Village%20Museum%20Fundu%20Moldovei%20household%20summer%20kitchen.jpg?width=1800")}
+.room-door-card--bedroom{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Romanian%20farmhouse%20bedroom%20%288053014190%29.jpg?width=1800")}
+.room-door-card--pantry{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/RO%20B%20Village%20Museum%20Suici%20household%20stable%20and%20storage%20room.jpg?width=1800")}
+.room-door-card--barn{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20%C8%98ur%C4%83%20in%20Racovi%C8%9Ba%2C%20Sibiu.jpg?width=1800"),linear-gradient(135deg,#6c4d39,#2f251f)}
+.room-door-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,10,.05) 15%,rgba(27,17,13,.82) 100%);transition:.3s}
+.room-door-card:hover .room-door-shade{background:linear-gradient(180deg,rgba(20,14,10,.0) 15%,rgba(27,17,13,.7) 100%)}
+.room-door-copy{position:relative;z-index:2;color:#FFF8EC;padding:48px;max-width:620px}
+.room-door-copy small{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#E9CDAF}
+.room-door-copy h2{font-size:66px;margin:8px 0 14px;color:#FFF8EC}
+.room-door-copy p{font-size:15px;line-height:1.65;max-width:470px;color:#F3E4D3}
+.room-door-copy b{display:inline-block;margin-top:20px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#F2C28E}
+
+/* actual room pages */
+.real-room-hero{
+  min-height:78vh;position:relative;display:flex;align-items:flex-end;
+  background-size:cover;background-position:center;
+  color:#fff8ec;
+}
+.real-room-hero--kitchen{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/RO%20B%20Village%20Museum%20Fundu%20Moldovei%20household%20summer%20kitchen.jpg?width=2200")}
+.real-room-hero--bedroom{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Romanian%20farmhouse%20bedroom%20%288053014190%29.jpg?width=2200")}
+.real-room-hero--pantry{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/RO%20B%20Village%20Museum%20Suici%20household%20stable%20and%20storage%20room.jpg?width=2200")}
+.real-room-hero--barn{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/RO%20B%20Village%20Museum%20Straja%20household.jpg?width=2200")}
+.real-room-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,20,15,.12) 0%,rgba(36,23,17,.28) 42%,rgba(31,19,15,.88) 100%)}
+.real-room-copy{position:relative;z-index:2;padding-bottom:80px}
+.real-room-copy .eyebrow{color:#F1C29A}
+.real-room-copy .eyebrow:before{color:#F1C29A}
+.real-room-copy h1{font-size:clamp(86px,13vw,180px);line-height:.8;color:#FFF8EC;margin:16px 0 22px;text-shadow:0 4px 30px rgba(0,0,0,.26)}
+.real-room-english{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#E7CFB9}
+.real-room-kicker{font-family:var(--display);font-size:25px;line-height:1.42;max-width:680px;color:#FFF8EC;margin:18px 0}
+.real-room-mood{font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:#F1C29A}
+.photo-credit-mini{position:absolute;right:18px;bottom:16px;z-index:2;color:rgba(255,255,255,.7);font-size:8px;letter-spacing:.05em}
+.room-products-section{background:var(--cream)!important}
+.room-products-section .section-heading h2{color:var(--wood)!important}
+
+.credits-page{background:var(--cream);min-height:70vh}.credits-page h1{font-size:72px;color:var(--wood)}.credits-list{padding-left:20px}.credits-list li{margin:18px 0;line-height:1.6}
+
+@media(max-width:720px){
+  .room-strip{top:72px}
+  .room-strip-inner{min-height:62px;width:100%;gap:0;padding-left:14px}
+  .room-strip-title{display:none}
+  .room-tab{min-width:132px;flex:0 0 132px;padding:8px 13px}
+  .room-tab strong{font-size:18px}
+  .nav--open{top:72px;background:var(--cream)!important}
+  .house-intro-real{min-height:360px}
+  .house-intro-real h1{font-size:58px}
+  .room-door-grid{grid-template-columns:1fr}
+  .room-door-card{min-height:72vh}
+  .room-door-copy{padding:28px 24px 34px}
+  .room-door-copy h2{font-size:52px}
+  .real-room-hero{min-height:74vh}
+  .real-room-copy{padding-bottom:58px}
+  .real-room-copy h1{font-size:78px}
+  .real-room-kicker{font-size:20px}
+  .photo-credit-mini{font-size:7px;left:14px;right:14px}
+}

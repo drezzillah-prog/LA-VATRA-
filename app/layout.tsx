@@ -4,8 +4,10 @@ import './globals.css';
 import './experience.css';
 import './eastern.css';
 import './reborn.css';
+import './rooms-real.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import RoomNav from '@/components/RoomNav';
 
 const display = Forum({
   subsets: ['latin', 'latin-ext'],
@@ -25,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" suppressHydrationWarning><body className={`${display.variable} ${body.variable}`}><Header /><main>{children}</main><Footer /></body></html>;
+  return <html lang="en" suppressHydrationWarning><body className={`${display.variable} ${body.variable}`}><Header /><RoomNav /><main>{children}</main><Footer /></body></html>;
 }
