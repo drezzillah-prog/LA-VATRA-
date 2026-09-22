@@ -10,4 +10,6 @@ Current website experiences include:
 - Four collection worlds
 - Signature product storytelling
 
+Visual direction: old paper, carved walnut, fired clay, oxblood and Black Sea blue-grey.
+
 Built with Next.js and deployed through Vercel.
