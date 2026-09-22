@@ -53,9 +53,9 @@ export default function Home() {
 
       <section className="section collection-section">
         <div className="shell">
-          <div className="section-heading split"><div><p className="eyebrow">Four worlds, one hearth</p><h2>Choose the room you need.</h2></div><p>Different moods. One visual language: thoughtful, tactile, culturally grounded and made to be lived with.</p></div>
+          <div className="section-heading split"><div><p className="eyebrow">Patru odăi, o singură casă</p><h2>Intră în casă. Alege o odaie.</h2></div><p>Bucătăria, dormitorul, cămara și hambarul. În spatele fiecărei odăi se află o colecție, dar casa vine prima.</p></div>
           <div className="collection-grid">{collections.map((collection) => <CollectionCard key={collection.slug} collection={collection} />)}</div>
-          <div className="room-link-row"><Link className="text-link" href="/house">Walk through Casa Vetrei <span>→</span></Link></div>
+          <div className="room-link-row"><Link className="text-link" href="/house">Intră în Casa Vetrei <span>→</span></Link></div>
         </div>
       </section>
 

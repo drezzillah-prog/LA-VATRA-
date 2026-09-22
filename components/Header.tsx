@@ -5,7 +5,7 @@ import { useState } from 'react';
 import HearthToggle from './HearthToggle';
 
 const links = [
-  ['The House', '/house'],
+  ['Casa Vetrei', '/house'],
   ['Symbols', '/symbols'],
   ['Our story', '/about'],
   ['FAQ', '/faq'],

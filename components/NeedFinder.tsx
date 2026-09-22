@@ -11,7 +11,7 @@ const needs = [
     text: 'Choose something that gives shape to a new beginning without demanding a perfect one.',
     product: 'Quiet Return Journal',
     href: '/product/quiet-return-journal',
-    room: 'The Quiet Room',
+    room: 'Bucătăria · The Kitchen',
   },
   {
     id: 'structure',
@@ -20,7 +20,7 @@ const needs = [
     text: 'A little architecture for your days — enough to hold your plans, not squeeze the life out of them.',
     product: 'Gentle Discipline Planner',
     href: '/product/gentle-discipline-planner',
-    room: 'The Worktable',
+    room: 'Cămara · The Pantry',
   },
   {
     id: 'thoughts',
@@ -29,7 +29,7 @@ const needs = [
     text: 'A place to write before you decide what anything means.',
     product: 'Quiet Return Journal',
     href: '/product/quiet-return-journal',
-    room: 'The Quiet Room',
+    room: 'Bucătăria · The Kitchen',
   },
   {
     id: 'dark',
@@ -38,7 +38,7 @@ const needs = [
     text: 'For symbols, dreams and the part of imagination that prefers candlelight to fluorescent certainty.',
     product: 'Nocturne Ritual Journal',
     href: '/product/nocturne-ritual-journal',
-    room: 'The Midnight Room',
+    room: 'Dormitorul · The Bedroom',
   },
   {
     id: 'home',
@@ -47,7 +47,7 @@ const needs = [
     text: 'Landscape, inherited detail and cultural memory translated into something you can live with every day.',
     product: 'Fireside Heritage Calendar',
     href: '/product/fireside-heritage-calendar',
-    room: 'The Ancestral Room',
+    room: 'Hambarul · The Barn',
   },
   {
     id: 'clarity',
@@ -56,7 +56,7 @@ const needs = [
     text: 'No life overhaul. Just a clean week, visible priorities and enough white space to think.',
     product: 'Clear Days Weekly',
     href: '/product/clear-days-weekly',
-    room: 'The Worktable',
+    room: 'Cămara · The Pantry',
   },
   {
     id: 'beauty',
@@ -65,7 +65,7 @@ const needs = [
     text: 'Not everything has to fix you. Some things can simply make the everyday feel more yours.',
     product: 'Old Europe Wallpaper Set',
     href: '/product/old-europe-wallpaper-set',
-    room: 'The Ancestral Room',
+    room: 'Hambarul · The Barn',
   },
 ] as const;
 

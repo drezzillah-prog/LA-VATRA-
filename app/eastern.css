@@ -668,3 +668,268 @@ html[data-hearth="evening"] .product-card--mystical .paper-object b{color:#ead8c
   .section:where(.philosophy,.collection-section,.featured-products,.story-section):after{width:calc(100% - 36px)}
   .collection-copy h3{font-size:31px}
 }
+
+
+/* CASA VETREI — lived-in rooms, not abstract tabs */
+:root{
+  --cream:#f4ead7;
+  --paper:#e8d4b8;
+  --paper2:#d8bd98;
+  --terracotta:#a84f32;
+  --rust:#803224;
+  --wood:#452820;
+  --oxblood:#6b1f2b;
+  --sea:#3f5d75;
+  --cobalt:#355f8a;
+  --old-gold:#b58a4e;
+}
+
+.room-grid--lived-in{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  border:0;
+}
+.room-grid--lived-in .room-card{
+  min-height:500px;
+  display:grid;
+  grid-template-columns:minmax(210px,.82fr) 1.18fr;
+  border:1px solid var(--line-strong);
+  background:#efe0c9;
+  overflow:hidden;
+  box-shadow:0 14px 34px rgba(60,35,24,.07);
+}
+.room-grid--lived-in .room-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 24px 54px rgba(60,35,24,.13);
+}
+.room-scene{
+  position:relative;
+  overflow:hidden;
+  min-height:100%;
+  border-right:1px solid var(--line-strong);
+  isolation:isolate;
+}
+.room-number{
+  position:absolute;
+  top:17px;
+  left:18px;
+  z-index:8;
+  font-family:var(--display);
+  font-size:18px;
+  color:currentColor;
+  opacity:.72;
+}
+.room-translation{
+  display:block;
+  margin:-8px 0 18px;
+  font-family:var(--body);
+  font-size:9px;
+  font-style:normal;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  color:var(--muted);
+}
+.room-grid--lived-in .room-copy h2{font-size:52px;margin-bottom:13px}
+.room-grid--lived-in .room-copy p{font-family:var(--body);font-size:15px;line-height:1.72}
+.room-grid--lived-in .room-copy small{margin-top:auto}
+.room-grid--lived-in .room-copy b{margin-top:28px;color:var(--oxblood);letter-spacing:.08em}
+
+/* Kitchen: whitewash, fired clay, stove, shelf */
+.room-card--kitchen .room-scene,
+.collection-card--healing .room-scene{
+  color:#6c2d24;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.36),transparent 32%),
+    #d9b38f;
+}
+.room-card--kitchen .scene-main,
+.collection-card--healing .scene-main{
+  position:absolute;left:31px;bottom:42px;width:92px;height:138px;
+  background:#efe3cb;border:1px solid #744435;
+  box-shadow:inset 0 0 0 6px rgba(122,67,48,.06);
+}
+.room-card--kitchen .scene-main:before,
+.collection-card--healing .scene-main:before{
+  content:"";position:absolute;left:21px;bottom:18px;width:48px;height:42px;
+  border-radius:24px 24px 3px 3px;background:#3a2722;border:4px solid #9d563d;
+}
+.room-card--kitchen .scene-main:after,
+.collection-card--healing .scene-main:after{
+  content:"";position:absolute;left:54px;top:-95px;width:22px;height:96px;
+  background:#efe3cb;border:1px solid #744435;border-bottom:0;
+}
+.room-card--kitchen .scene-detail--a,
+.collection-card--healing .scene-detail--a{
+  position:absolute;right:20px;bottom:61px;width:91px;height:9px;background:#643d2e;
+  box-shadow:0 38px 0 #643d2e;
+}
+.room-card--kitchen .scene-detail--a:before,
+.collection-card--healing .scene-detail--a:before{
+  content:"";position:absolute;left:8px;top:8px;width:7px;height:82px;background:#643d2e;
+  box-shadow:67px 0 0 #643d2e;
+}
+.room-card--kitchen .scene-detail--b,
+.collection-card--healing .scene-detail--b{
+  position:absolute;right:23px;top:87px;width:104px;height:5px;background:#754a37;
+  box-shadow:0 42px 0 #754a37;
+}
+.room-card--kitchen .scene-detail--c,
+.collection-card--healing .scene-detail--c{
+  position:absolute;right:35px;top:64px;width:16px;height:22px;border:1px solid #6b3027;background:#b65d3d;
+  box-shadow:27px 4px 0 -1px #efe3cb,52px -2px 0 -2px #7f2630;
+}
+
+/* Bedroom: oxblood, linen, bed and window */
+.room-card--bedroom .room-scene,
+.collection-card--mystical .room-scene{
+  color:#e5c7b0;
+  background:
+    radial-gradient(circle at 72% 24%,rgba(223,171,112,.11),transparent 22%),
+    #2b1b22;
+}
+.room-card--bedroom .scene-main,
+.collection-card--mystical .scene-main{
+  position:absolute;left:28px;right:25px;bottom:42px;height:103px;
+  background:#d8c0a5;border:1px solid #9c6b56;
+  box-shadow:inset 0 -38px 0 #742b36;
+}
+.room-card--bedroom .scene-main:before,
+.collection-card--mystical .scene-main:before{
+  content:"";position:absolute;left:-1px;right:-1px;top:-58px;height:59px;
+  border:1px solid #9c6b56;border-bottom:0;
+  background:repeating-linear-gradient(90deg,#4b302d 0 4px,transparent 4px 15px);
+}
+.room-card--bedroom .scene-detail--a,
+.collection-card--mystical .scene-detail--a{
+  position:absolute;right:31px;top:49px;width:74px;height:94px;border:7px solid #5d3a30;
+  background:linear-gradient(#526b82 0 52%,#d3b078 53% 56%,#3c4e60 57%);
+}
+.room-card--bedroom .scene-detail--b,
+.collection-card--mystical .scene-detail--b{
+  position:absolute;left:44px;bottom:78px;width:58px;height:22px;border-radius:50%;
+  background:#efe1cc;
+}
+.room-card--bedroom .scene-detail--c,
+.collection-card--mystical .scene-detail--c{
+  position:absolute;left:20px;top:30px;width:5px;height:120px;background:#8b3a42;
+  box-shadow:135px 0 0 #8b3a42;
+}
+
+/* Pantry: cobalt accents, ordered shelves, jars */
+.room-card--pantry .room-scene,
+.collection-card--productivity .room-scene{
+  color:#334d67;
+  background:#d8cfbf;
+}
+.room-card--pantry .scene-main,
+.collection-card--productivity .scene-main{
+  position:absolute;inset:52px 24px 43px;border:6px solid #5f4235;
+  background:
+    linear-gradient(#5f4235,#5f4235) 0 33%/100% 5px no-repeat,
+    linear-gradient(#5f4235,#5f4235) 0 66%/100% 5px no-repeat;
+}
+.room-card--pantry .scene-detail--a,
+.collection-card--productivity .scene-detail--a{
+  position:absolute;left:44px;top:80px;width:24px;height:35px;
+  border-radius:4px 4px 8px 8px;background:#f0e1c9;border:1px solid #355f8a;
+  box-shadow:45px 7px 0 #b45a3d,88px -3px 0 #e7d5b8;
+}
+.room-card--pantry .scene-detail--b,
+.collection-card--productivity .scene-detail--b{
+  position:absolute;left:38px;top:172px;width:31px;height:43px;
+  background:#b99154;border-radius:5px 5px 10px 10px;
+  box-shadow:50px -4px 0 #f1e4ce,96px 2px 0 #355f8a;
+}
+.room-card--pantry .scene-detail--c,
+.collection-card--productivity .scene-detail--c{
+  position:absolute;left:52px;bottom:63px;width:73px;height:38px;
+  background:repeating-linear-gradient(90deg,#6a4635 0 5px,#be9362 5px 17px);
+  border:1px solid #5f4235;
+}
+
+/* Barn: timber, wheat, wide doors */
+.room-card--barn .room-scene,
+.collection-card--culture .room-scene{
+  color:#f0d1a8;
+  background:
+    linear-gradient(115deg,transparent 48%,rgba(55,29,20,.28) 49% 51%,transparent 52%),
+    #813d2d;
+}
+.room-card--barn .scene-main,
+.collection-card--culture .scene-main{
+  position:absolute;left:37px;right:37px;top:72px;bottom:42px;
+  border:7px solid #4d2d23;
+  background:
+    linear-gradient(45deg,transparent 47%,#4d2d23 48% 52%,transparent 53%),
+    linear-gradient(-45deg,transparent 47%,#4d2d23 48% 52%,transparent 53%),
+    #a95b3e;
+}
+.room-card--barn .scene-detail--a,
+.collection-card--culture .scene-detail--a{
+  position:absolute;left:21px;right:21px;top:47px;height:9px;background:#4d2d23;
+  transform:rotate(-7deg);
+}
+.room-card--barn .scene-detail--b,
+.collection-card--culture .scene-detail--b{
+  position:absolute;left:20px;bottom:28px;width:62px;height:49px;border-radius:50% 50% 12px 12px;
+  background:#c9a266;box-shadow:92px 7px 0 #d6b77c;
+}
+.room-card--barn .scene-detail--c,
+.collection-card--culture .scene-detail--c{
+  position:absolute;right:18px;top:28px;width:3px;height:85px;background:#d5aa62;
+  transform:rotate(15deg);box-shadow:-9px 4px 0 #d5aa62,-18px 10px 0 #d5aa62;
+}
+
+/* Home + Shop collection cards now behave as doors into rooms */
+.room-collection-card{
+  min-height:380px;
+  grid-template-columns:42% 58%;
+  border:1px solid var(--line-strong);
+  background:#efe0c9;
+}
+.room-collection-card .collection-art{
+  min-height:100%;
+  border-right:1px solid var(--line-strong);
+}
+.room-scene--mini .scene-main,
+.room-scene--mini .scene-detail{transform:scale(.88)}
+.room-collection-card .collection-copy{padding:34px}
+.room-collection-card .collection-copy h3{font-size:42px;margin:8px 0 11px}
+.room-collection-card .collection-copy>p:not(.eyebrow){font-size:13px;line-height:1.65}
+.room-collection-card .card-meta b{color:var(--oxblood)}
+.room-collection-card.collection-card--mystical .room-translation{color:#c8b3a6}
+
+/* Make Romanian/Eastern-European palette visible across products, without green */
+.collection-card--healing .collection-art,
+.product-card--healing .product-visual{background:#c98b6b;color:#6d2b25}
+.collection-card--productivity .collection-art,
+.product-card--productivity .product-visual{background:#b8c0c4;color:#355f8a}
+.collection-card--culture .collection-art,
+.product-card--culture .product-visual{background:#8d402e;color:#f1d3a8}
+.product-detail-hero--productivity .gallery-main{background:#b8c0c4}
+.room-card--kitchen,.room-card--pantry,.room-card--barn{color:var(--ink)}
+.room-card--bedroom{background:#2b1b22;color:#ead9c8}
+.room-card--bedroom .room-copy h2{color:#ead9c8}
+.room-card--bedroom .room-copy p{color:#cbb9ac}
+.room-card--bedroom .room-translation{color:#bca697}
+
+html[data-hearth="evening"] .room-card--kitchen,
+html[data-hearth="evening"] .room-card--pantry,
+html[data-hearth="evening"] .room-card--barn{background:#241a18;color:#f0dfcc}
+html[data-hearth="evening"] .room-card--kitchen .room-copy h2,
+html[data-hearth="evening"] .room-card--pantry .room-copy h2,
+html[data-hearth="evening"] .room-card--barn .room-copy h2{color:#f0dfcc}
+
+@media(max-width:980px){
+  .room-grid--lived-in{grid-template-columns:1fr}
+  .room-grid--lived-in .room-card{min-height:450px}
+}
+@media(max-width:720px){
+  .room-grid--lived-in .room-card,
+  .room-collection-card{grid-template-columns:1fr}
+  .room-grid--lived-in .room-scene,
+  .room-collection-card .collection-art{min-height:270px;border-right:0;border-bottom:1px solid var(--line-strong)}
+  .room-grid--lived-in .room-copy h2{font-size:45px}
+  .room-collection-card .collection-copy h3{font-size:38px}
+}
