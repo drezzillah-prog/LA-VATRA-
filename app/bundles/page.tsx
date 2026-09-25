@@ -1,0 +1,3 @@
+import ProductCard from '@/components/ProductCard';import {products} from '@/data/catalog';import {getRequestContext} from '@/lib/localization';
+export const metadata={title:'Bundles'};
+export default async function Bundles(){const {region}=await getRequestContext();const list=products.filter(p=>p.bundle);return <><section className="special-hero bundle-hero"><div className="shell"><p className="eyebrow">La Vatra Libraries</p><h1>When one object is not enough.</h1><p>Complete libraries for planning, family memory and inherited home.</p></div></section><section className="section"><div className="shell"><div className="product-grid bundle-page-grid">{list.map(p=><ProductCard key={p.slug} product={p} region={region}/>)}</div></div></section></>;}
