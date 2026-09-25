@@ -10,7 +10,12 @@ export async function getRequestContext(){
  const country=(h.get('x-vercel-ip-country')||h.get('cf-ipcountry')||'').toUpperCase();
  const accept=(h.get('accept-language')||'en').toLowerCase();
  const primary=accept.split(',')[0]?.split('-')[0]||'en';
- const language=(['ro','fr','de','it'].includes(primary)?primary:'en') as SiteLanguage;
+ let language:SiteLanguage='en';
+ if(country==='RO') language='ro';
+ else if(country==='FR'||country==='MC') language='fr';
+ else if(['DE','AT','LI'].includes(country)) language='de';
+ else if(['IT','SM','VA'].includes(country)) language='it';
+ else if(['ro','fr','de','it'].includes(primary)) language=primary as SiteLanguage;
  let region:RegionKey='eu';
  if(country==='RO') region='ro';
  else if(country==='US') region='us';
