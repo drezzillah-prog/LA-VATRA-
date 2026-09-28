@@ -3,16 +3,13 @@ import Link from 'next/link';
 import {useState} from 'react';
 import BrandMark from './BrandMark';
 
-type SiteLanguage='ro'|'en'|'fr'|'de'|'it';
+type SiteLanguage='ro'|'en';
 const navCopy={
- ro:{shop:'Magazin',gifts:'Cadouri',family:'Arhiva Familiei',bundles:'Bundles',story:'Poveste',faq:'FAQ',search:'Caută',cart:'Coș'},
- en:{shop:'Shop',gifts:'Gifts',family:'Family Archive',bundles:'Bundles',story:'Our story',faq:'FAQ',search:'Search',cart:'Cart'},
- fr:{shop:'Boutique',gifts:'Cadeaux',family:'Archives de famille',bundles:'Collections',story:'Notre histoire',faq:'FAQ',search:'Rechercher',cart:'Panier'},
- de:{shop:'Shop',gifts:'Geschenke',family:'Familienarchiv',bundles:'Bundles',story:'Unsere Geschichte',faq:'FAQ',search:'Suche',cart:'Warenkorb'},
- it:{shop:'Negozio',gifts:'Regali',family:'Archivio di famiglia',bundles:'Bundle',story:'La nostra storia',faq:'FAQ',search:'Cerca',cart:'Carrello'}
+ ro:{shop:'Magazin',gifts:'Cadouri',family:'Arhiva Familiei',bundles:'Pachete',story:'Poveste',faq:'Întrebări',search:'Caută',cart:'Coș'},
+ en:{shop:'Shop',gifts:'Gifts',family:'Family Archive',bundles:'Bundles',story:'Our story',faq:'FAQ',search:'Search',cart:'Cart'}
 };
 
-export default function Header({language,regionLabel}:{language:SiteLanguage;regionLabel:string}){
+export default function Header({language}:{language:SiteLanguage}){
  const [open,setOpen]=useState(false);
  const c=navCopy[language];
  const links=[[c.shop,'/shop'],[c.gifts,'/gifts'],[c.family,'/family-archive'],[c.bundles,'/bundles'],[c.story,'/about'],[c.faq,'/faq']] as const;
@@ -22,7 +19,6 @@ export default function Header({language,regionLabel}:{language:SiteLanguage;reg
   <nav className={open?'nav nav--open':'nav'} aria-label="Main navigation">
    {links.map(([label,href])=><Link key={href} href={href} onClick={()=>setOpen(false)}>{label}</Link>)}
    <Link href="/shop?focus=search" onClick={()=>setOpen(false)}>{c.search}</Link>
-   <span className="region-pill" title="Commercial region is detected automatically">{regionLabel}</span>
    <span className="cart-soon" title="Checkout connection is coming next">{c.cart}<small>soon</small></span>
   </nav>
  </div></header>;

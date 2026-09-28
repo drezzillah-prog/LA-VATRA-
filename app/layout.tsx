@@ -7,6 +7,5 @@ export const metadata:Metadata={title:{default:'La Vatra — Keep it while someo
 
 export default async function RootLayout({children}:{children:React.ReactNode}){
  const ctx=await getRequestContext();
- const regionLabel=ctx.region==='ro'?'RO · RON':ctx.region==='eu'?'EU · EUR':'US/INTL · USD';
- return <html lang={ctx.language} suppressHydrationWarning><body><Header language={ctx.language} regionLabel={regionLabel}/><RoomNav/><main>{children}</main><Footer/></body></html>;
+ return <html lang={ctx.language} suppressHydrationWarning><body><Header language={ctx.language}/><RoomNav/><main>{children}</main><Footer/></body></html>;
 }

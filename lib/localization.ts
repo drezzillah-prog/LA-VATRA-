@@ -3,19 +3,12 @@ import type { RegionKey } from '@/data/catalog';
 
 const EUROPE=new Set(['AL','AD','AT','BY','BE','BA','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','XK','LV','LI','LT','LU','MT','MD','MC','ME','NL','MK','NO','PL','PT','SM','RS','SK','SI','ES','SE','CH','UA','GB','VA']);
 
-export type SiteLanguage='ro'|'en'|'fr'|'de'|'it';
+export type SiteLanguage='ro'|'en';
 
 export async function getRequestContext(){
  const h=await headers();
  const country=(h.get('x-vercel-ip-country')||h.get('cf-ipcountry')||'').toUpperCase();
- const accept=(h.get('accept-language')||'en').toLowerCase();
- const primary=accept.split(',')[0]?.split('-')[0]||'en';
- let language:SiteLanguage='en';
- if(country==='RO') language='ro';
- else if(country==='FR'||country==='MC') language='fr';
- else if(['DE','AT','LI'].includes(country)) language='de';
- else if(['IT','SM','VA'].includes(country)) language='it';
- else if(['ro','fr','de','it'].includes(primary)) language=primary as SiteLanguage;
+ const language:SiteLanguage=country==='RO'?'ro':'en';
  let region:RegionKey='eu';
  if(country==='RO') region='ro';
  else if(country==='US') region='us';
@@ -31,9 +24,6 @@ export function formatPrice(price:{ro:number;eu:number;us:number},region:RegionK
 }
 
 export const navCopy={
- ro:{shop:'Magazin',gifts:'Cadouri',family:'Arhiva Familiei',bundles:'Bundles',story:'Poveste',faq:'FAQ',search:'Caută',cart:'Coș'},
- en:{shop:'Shop',gifts:'Gifts',family:'Family Archive',bundles:'Bundles',story:'Our story',faq:'FAQ',search:'Search',cart:'Cart'},
- fr:{shop:'Boutique',gifts:'Cadeaux',family:'Archives de famille',bundles:'Collections',story:'Notre histoire',faq:'FAQ',search:'Rechercher',cart:'Panier'},
- de:{shop:'Shop',gifts:'Geschenke',family:'Familienarchiv',bundles:'Bundles',story:'Unsere Geschichte',faq:'FAQ',search:'Suche',cart:'Warenkorb'},
- it:{shop:'Negozio',gifts:'Regali',family:'Archivio di famiglia',bundles:'Bundle',story:'La nostra storia',faq:'FAQ',search:'Cerca',cart:'Carrello'}
+ ro:{shop:'Magazin',gifts:'Cadouri',family:'Arhiva Familiei',bundles:'Pachete',story:'Poveste',faq:'Întrebări',search:'Caută',cart:'Coș'},
+ en:{shop:'Shop',gifts:'Gifts',family:'Family Archive',bundles:'Bundles',story:'Our story',faq:'FAQ',search:'Search',cart:'Cart'}
 };
