@@ -5,7 +5,7 @@ import {getRequestContext} from '@/lib/localization';
 const copy={
  ro:{
   eyebrow:'Cadouri',
-  headline:'Unele daruri se desfac într-o clipă. Altele rămân în familie ani întregi.',
+  headline:'Cele mai frumoase daruri sunt cele care păstrează ceva din noi.',
   intro:'Pentru povești, glasuri, rețete și locuri care merită păstrate aproape.',
   groups:[
    ['Pentru mamă','Poveștile pe care le spune de parcă le-ai fi știut dintotdeauna.'],
@@ -22,7 +22,7 @@ const copy={
  },
  en:{
   eyebrow:'Gifts',
-  headline:'Some gifts are opened in a moment. Others stay in the family for years.',
+  headline:'The loveliest gifts are the ones that keep a piece of us.',
   intro:'For the stories, voices, recipes, and places worth keeping close.',
   groups:[
    ['For Mum','The stories she tells as if you had always known them.'],
