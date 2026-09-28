@@ -1,5 +1,5 @@
 /* LA VATRA FINAL ARCHITECTURE */
-:root{--font-display:Georgia,'Times New Roman',serif;--font-body:Arial,Helvetica,sans-serif;--display:Georgia,'Times New Roman',serif;--body:Arial,Helvetica,sans-serif;--cream:#F6F1E7;--paper:#EADFCB;--paper2:#D8C5A7;--ink:#2B211C;--muted:#6D5B50;--terracotta:#B5533C;--wood:#4A3428;--oxblood:#7A2E3A;--cobalt:#4D6D8A;--old-gold:#B78B50;--line:rgba(74,52,40,.18)}
+:root{--font-display:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;--font-body:Georgia,'Times New Roman',serif;--display:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;--body:Georgia,'Times New Roman',serif;--cream:#F6F1E7;--paper:#EADFCB;--paper2:#D8C5A7;--ink:#2B211C;--muted:#6D5B50;--terracotta:#B5533C;--wood:#4A3428;--oxblood:#7A2E3A;--cobalt:#4D6D8A;--old-gold:#B78B50;--line:rgba(74,52,40,.18)}
 html,body{background:var(--cream)!important;color:var(--ink)!important}.site-header{background:rgba(246,241,231,.97)!important;border-bottom:1px solid var(--line)!important}.header-inner{height:78px}.nav{gap:20px}.region-pill{padding:8px 10px;border:1px solid var(--line);font-size:8px;letter-spacing:.11em;color:var(--muted)}.cart-soon{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);display:flex;gap:5px;align-items:center}.cart-soon small{font-size:6px;color:var(--terracotta)}
 .room-strip{top:78px;background:var(--wood);border-bottom:3px solid var(--terracotta)}.room-strip-inner{min-height:64px}.room-tab{min-width:160px}.room-tab strong{font-size:18px;letter-spacing:.04em}.room-tab small{text-transform:none;font-size:8px;letter-spacing:.08em}.room-tab:hover,.room-tab--active{background:var(--oxblood)}
 
@@ -16,3 +16,19 @@ html,body{background:var(--cream)!important;color:var(--ink)!important}.site-hea
 .product-grid{grid-template-columns:repeat(3,1fr)}
 @media(max-width:1100px){.five-room-grid,.room-threshold-grid{grid-template-columns:repeat(2,1fr)}.room-photo-card,.threshold-room{min-height:540px}.product-grid,.bundle-cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){.room-strip{top:68px}.room-strip-inner{width:100%;padding-left:12px}.room-strip-title{display:none}.room-tab{min-width:138px;flex:0 0 138px}.lv-hero{min-height:78vh}.lv-hero-copy{padding-bottom:48px}.lv-hero-copy h1{font-size:56px}.five-room-grid,.room-threshold-grid{grid-template-columns:1fr}.room-photo-card,.threshold-room{min-height:62vh}.intent-grid{grid-template-columns:1fr}.intent-card{grid-template-columns:25px 1fr}.intent-card b{display:none}.flagship-grid,.gift-home-grid,.one-page-grid,.archive-builder-grid{grid-template-columns:1fr}.flagship-panel{padding:42px 24px;min-height:400px}.flagship-panel h2,.gift-home h2,.one-page-grid h2{font-size:46px}.gift-home{padding:70px 0}.gift-quote{font-size:34px}.bundle-cards,.bundle-page-grid,.product-grid{grid-template-columns:1fr}.threshold-hero h1{font-size:62px}.room-world-copy h1{font-size:72px}.keep-it-banner h2{font-size:50px}.shop-tools{grid-template-columns:1fr}.shop-tools>b{padding:0}.shop-hero-final h1{font-size:58px}.preview-strip{grid-template-columns:1fr}.gift-reasons{grid-template-columns:1fr}.footer-grid-final{grid-template-columns:1fr}.nav--open{top:68px}}
+
+/* Rustic editorial typography — La Vatra */
+body{font-family:var(--body)!important;letter-spacing:.005em}
+h1,h2,h3,.wordmark,.room-tab strong,.paper-object b,.large-paper-object h1,.gift-quote,.intent-card strong,.included-list li,.ideal-card>p:not(.eyebrow),.product-subtitle,.local-price strong,.single-price{
+  font-family:var(--display)!important;
+}
+h1,h2,h3{font-weight:400!important;letter-spacing:-.025em!important}
+.wordmark{font-weight:400!important;letter-spacing:.22em!important}
+.room-tab strong{font-weight:400!important;letter-spacing:.055em!important}
+.eyebrow,.product-badge,.new-badge,.room-tab small,.region-pill,.cart-soon,.filter-chip,.product-foot,.button{
+  font-family:Georgia,'Times New Roman',serif!important;
+  letter-spacing:.13em!important;
+}
+.product-card-copy p,.room-world-copy>p:last-child,.lv-hero-copy>p:not(.eyebrow),.newsletter-inner p,.footer-grid p{
+  font-family:Georgia,'Times New Roman',serif!important;
+}
