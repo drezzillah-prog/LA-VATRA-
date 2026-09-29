@@ -73,3 +73,20 @@ body,.product-card-copy p,.room-world-copy>p:last-child,.lv-hero-copy>p:not(.eye
   .wordmark--floral>span:last-child{letter-spacing:.08em!important}
   .footer-brand .brand-mark{width:58px;height:58px}
 }
+
+/* Gentle Discipline real preview gallery */
+.planner-gallery-heading{margin-bottom:18px}
+.planner-gallery-heading h2{font-size:clamp(30px,4vw,46px);margin:4px 0 0}
+.planner-preview-main{position:relative;background:#eadfcb;border:1px solid var(--line);overflow:hidden}
+.planner-preview-main img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.planner-preview-main>span,.planner-preview-grid figure>div>span{position:absolute;right:10px;bottom:10px;background:rgba(246,241,231,.88);color:var(--wood);padding:6px 8px;font-size:7px;letter-spacing:.14em}
+.planner-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.planner-preview-grid figure{margin:0}
+.planner-preview-grid figure>div{position:relative;border:1px solid var(--line);background:#eadfcb;overflow:hidden}
+.planner-preview-grid img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.planner-preview-grid figure:last-child img{object-fit:contain;background:#2b211c}
+.planner-preview-grid figcaption{font-family:var(--font-body);font-size:12px;color:var(--muted);padding-top:7px}
+.planner-preview-note{font-size:12px;line-height:1.55;color:var(--muted);margin-top:14px}
+.included-list{columns:2;column-gap:34px;padding-left:0;list-style:none}
+.included-list li{break-inside:avoid;border-bottom:1px solid var(--line);padding:9px 0;font-size:18px}
+@media(max-width:720px){.planner-preview-grid{grid-template-columns:1fr 1fr;gap:8px}.included-list{columns:1}}

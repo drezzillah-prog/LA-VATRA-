@@ -24,7 +24,7 @@ export const products:Product[]=[
     featured:true, bestseller:true, isNew:false, bundle:false,
     title:"Gentle Discipline Planner 2027", subtitle:"Structure without severity, dated for 2027.", type:"Digital planner · Printable PDF", badge:"Signature edition",
     description:"A refined planning system for people who want consistency without self-punishment, with monthly, weekly and reflection pages.",
-    included:["Year-at-a-glance and seasonal intention pages","Monthly planning and gentle reset spreads","Weekly focus, priorities and energy-aware planning","Habit and rhythm trackers","Reflection pages","Printable and tablet-friendly files"],
+    included:["2027 year at a glance","Important dates","Things to do this year","Personal goals","Professional / study goals","Monthly plan","Monthly calendar","Weekly plan","Weekly priorities","General to-do list","Habit tracker","Monthly budget","Brain dump","Quarterly review","Year in review"],
     idealFor:"Thoughtful planners, recovering perfectionists and creative professionals.", formats:"PDF · A4 · A5 · US Letter · tablet-friendly",
     price:{"ro":109,"eu":32,"us":38}, tags:["planner","2027","weekly"]
   },
