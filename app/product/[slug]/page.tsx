@@ -10,17 +10,17 @@ export function generateStaticParams(){return products.map(({slug})=>({slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=getProduct(slug);return {title:p?.title||'Product'};}
 
 const gentleCoverStyles=[
- {key:'rustic-floral',pos:'p0',ro:'Rustic floral',en:'Rustic floral',roDetail:'Flori de câmp, măceșe și motive geometrice țesute.',enDetail:'Wildflowers, rosehips and woven geometric motifs.'},
- {key:'vintage-paper',pos:'p2',ro:'Hârtie vintage',en:'Vintage paper',roDetail:'Hârtie patinată, sepia și ilustrații fine de arhivă.',enDetail:'Aged paper, sepia tones and fine archival illustration.'},
- {key:'dark-folk',pos:'p4',ro:'Dark folk',en:'Dark folk',roDetail:'Fundaluri adânci, flori nocturne și ornamente folclorice.',enDetail:'Deep backgrounds, nocturnal florals and folk ornament.'},
- {key:'coastal-dobrogea',pos:'p6',ro:'Dobrogea de coastă',en:'Coastal Dobrogea',roDetail:'Albastru stins, ierburi de coastă, mare și ceramică dobrogeană.',enDetail:'Muted blue, coastal grasses, sea and Dobrogean ceramics.'}
+ {key:'rustic-floral',pos:'p0',ro:'Rustic floral',en:'Rustic floral',roDetail:'Flori de câmp, măceșe, frunze și borduri botanice luminoase.',enDetail:'Wildflowers, rosehips, leaves and light botanical borders.'},
+ {key:'vintage-paper',pos:'p2',ro:'Hârtie vintage',en:'Vintage paper',roDetail:'Hârtie patinată, gravuri sepia, peisaje vechi și ilustrații botanice de arhivă.',enDetail:'Aged paper, sepia engravings, old landscapes and archival botanical illustration.'},
+ {key:'dark-folk',pos:'p4',ro:'Dark folk',en:'Dark folk',roDetail:'Luni, molii, păsări, ierburi și simboluri populare pe fundaluri adânci.',enDetail:'Moons, moths, birds, herbs and folk symbols on deep backgrounds.'},
+ {key:'embroidered-textile',pos:'p6',ro:'Broderie / textil',en:'Embroidered / textile',roDetail:'Motive geometrice inspirate din țesături și broderii, benzi decorative și accente roșu-negru.',enDetail:'Geometric motifs inspired by woven textiles and embroidery, decorative bands and red-black accents.'}
 ];
 
 const gentlePageStyles=[
- {key:'rustic-floral-pages',pos:'p1',ro:'Rustic floral',en:'Rustic floral',roDetail:'Borduri florale, măceșe, margarete și motive roșu-cărămiziu.',enDetail:'Floral borders, rosehips, daisies and brick-red motifs.'},
- {key:'vintage-paper-pages',pos:'p3',ro:'Hârtie vintage',en:'Vintage paper',roDetail:'Desene în tuș și sepia, plante presate și mici scene de casă.',enDetail:'Ink and sepia drawings, pressed botanicals and small home scenes.'},
- {key:'dark-folk-pages',pos:'p5',ro:'Dark folk',en:'Dark folk',roDetail:'Ramuri, flori întunecate și simboluri populare desenate fin.',enDetail:'Branches, dark florals and finely drawn folk symbols.'},
- {key:'coastal-dobrogea-pages',pos:'p7',ro:'Dobrogea de coastă',en:'Coastal Dobrogea',roDetail:'Flori de câmp, valuri, faleză și accente albastre discrete.',enDetail:'Wildflowers, waves, cliffs and restrained blue accents.'}
+ {key:'rustic-floral-pages',pos:'p1',ro:'Rustic floral',en:'Rustic floral',roDetail:'Borduri cu flori de câmp, măceșe, margarete și mici desene botanice în colțuri.',enDetail:'Wildflower borders, rosehips, daisies and small botanical drawings in the corners.'},
+ {key:'vintage-paper-pages',pos:'p3',ro:'Hârtie vintage',en:'Vintage paper',roDetail:'Gravuri în tuș și sepia, plante presate, mici peisaje și obiecte desenate ca într-un caiet vechi.',enDetail:'Ink and sepia engravings, pressed botanicals, small landscapes and objects drawn like an old notebook.'},
+ {key:'dark-folk-pages',pos:'p5',ro:'Dark folk',en:'Dark folk',roDetail:'Luni, molii, păsări, ierburi și simboluri populare desenate fin în margini și colțuri.',enDetail:'Moons, moths, birds, herbs and finely drawn folk symbols used in borders and corners.'},
+ {key:'embroidered-textile-pages',pos:'p7',ro:'Broderie / textil',en:'Embroidered / textile',roDetail:'Borduri geometrice, motive de cusătură, mici elemente textile și accente roșu-negru.',enDetail:'Geometric borders, stitch-inspired motifs, small textile details and red-black accents.'}
 ];
 
 const gentleIncludedRo=[
@@ -40,7 +40,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
  const gentle=product.slug==='gentle-discipline-planner';
  const displayTitle=gentle&&ro?'Planificator Gentle Discipline 2027':product.title;
  const displaySubtitle=gentle
-  ?(ro?'Un planificator pentru 2027, creat să-ți așeze planurile, prioritățile și lucrurile care contează într-un ritm care poate fi ținut.':'A 2027 planner designed to bring plans, priorities and the things that matter into a rhythm you can actually keep.')
+  ?(ro?'Rânduială pentru 2027, cu loc pentru planuri, pauze și viața dintre ele.':'A gentler rhythm for 2027, with room for plans, pauses, and the life in between.')
   :product.subtitle;
  const displayDescription=gentle&&ro
   ?'Un sistem de planificare pentru un an mai așezat: suficientă structură ca să știi încotro mergi, fără să transformi fiecare zi într-o probă de productivitate.'
@@ -55,7 +55,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   styles:'Alege stilul plannerului',
   coverStyles:'4 stiluri de copertă',
   pageStyles:'4 stiluri de pagini',
-  styleText:'Sunt aceleași patru familii vizuale pentru copertă și interior: Rustic floral, Hârtie vintage, Dark folk și Dobrogea de coastă. La paginile interioare, stilul înseamnă tipul desenului, bordurile, motivele și paleta — nu funcția paginii. Calendarul final este verificat separat pentru date și text.',
+  styleText:'Sunt aceleași patru familii vizuale pentru copertă și interior: Rustic floral, Hârtie vintage, Dark folk și Broderie / textil. La paginile interioare, stilul înseamnă tipul desenului, bordurile, motivele și paleta — nu funcția paginii. Calendarul final este verificat separat pentru date și text.',
   customTitle:'Îl vrei mai aproape de tine?',
   customText:'Îți place această ediție, dar ai vrea să înlocuiești câteva pagini cu altele? Se poate. Anumite pagini pot fi schimbate la cerere cu pagini din celelalte ediții Gentle Discipline.',
   preview:'LA VATRA · PREVIEW'
@@ -68,7 +68,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   styles:'Choose your planner style',
   coverStyles:'4 cover styles',
   pageStyles:'4 page styles',
-  styleText:'The same four visual families are available for cover and interior: Rustic Floral, Vintage Paper, Dark Folk and Coastal Dobrogea. For interior pages, style means the illustration language, borders, motifs and palette — not the page function. The final calendar is separately verified for dates and text.',
+  styleText:'The same four visual families are available for cover and interior: Rustic Floral, Vintage Paper, Dark Folk and Embroidered / Textile. For interior pages, style means the illustration language, borders, motifs and palette — not the page function. The final calendar is separately verified for dates and text.',
   customTitle:'Want to make it more yours?',
   customText:'Like this edition, but want to replace a few pages? You can. Selected pages can be swapped for pages from the other Gentle Discipline editions on request.',
   preview:'LA VATRA · PREVIEW'
