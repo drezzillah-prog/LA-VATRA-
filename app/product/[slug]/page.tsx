@@ -8,10 +8,20 @@ import {getRequestContext,formatPrice} from '@/lib/localization';
 export function generateStaticParams(){return products.map(({slug})=>({slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=getProduct(slug);return {title:p?.title||'Product'};}
 
-const gentleGallery=[
- {src:'/products/gentle-discipline/01-approved-cover-v2.webp',ro:'Copertă aprobată',en:'Approved cover'},
- {src:'/products/gentle-discipline/02-approved-interior-v2.webp',ro:'Interior aprobat',en:'Approved interior'},
- {src:'/products/gentle-discipline/03-approved-styles-v2.webp',ro:'Alte stiluri aprobate',en:'More approved styles'}
+const gentleCoverStyles=[
+ {key:'rustic-floral',pos:'p0',ro:'Rustic floral',en:'Rustic floral'},
+ {key:'vintage-paper',pos:'p1',ro:'Hârtie vintage',en:'Vintage paper'},
+ {key:'dark-folk',pos:'p2',ro:'Dark folk',en:'Dark folk'},
+ {key:'textile',pos:'p3',ro:'Broderie / inspirație textilă',en:'Embroidered / textile inspired'},
+ {key:'dobrogea',pos:'p4',ro:'Dobrogea de coastă',en:'Coastal Dobrogea'},
+ {key:'heritage-minimal',pos:'p5',ro:'Heritage minimal',en:'Heritage minimal'}
+];
+
+const gentlePageStyles=[
+ {key:'goals',pos:'p6',ro:'Obiective și priorități',en:'Goals & priorities'},
+ {key:'month',pos:'p7',ro:'Calendar lunar 2027',en:'Monthly calendar 2027'},
+ {key:'life-pages',pos:'p8',ro:'Rețete, tradiții, filme și călătorii',en:'Recipes, traditions, films & travel'},
+ {key:'coastal-week',pos:'p9',ro:'Plan săptămânal — Dobrogea',en:'Weekly plan — Dobrogea'}
 ];
 
 const gentleIncludedRo=[
@@ -42,7 +52,9 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   know:'Bine de știut',knowText:'Conceput pentru uz personal. Formatele de print și compatibilitatea digitală sunt indicate mai sus.',
   complete:'Completează odaia',more:'Mai sunt lucruri de păstrat aici.',
   styles:'Stiluri de copertă și pagini disponibile',
-  styleText:'Aceste imagini prezintă direcțiile vizuale aprobate. Calendarul livrat la cumpărare este verificat separat pentru date și text.',
+  coverStyles:'Stiluri de copertă',
+  pageStyles:'Stiluri de pagini',
+  styleText:'Alege stilul care îți place. Imaginile sunt preview-uri ale direcțiilor vizuale; calendarul livrat este verificat separat pentru date și text.',
   customTitle:'Îl vrei mai aproape de tine?',
   customText:'Îți place această ediție, dar ai vrea să înlocuiești câteva pagini cu altele? Se poate. Anumite pagini pot fi schimbate la cerere cu pagini din celelalte ediții Gentle Discipline.',
   preview:'LA VATRA · PREVIEW'
@@ -53,7 +65,9 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   know:'Good to know',knowText:'Designed for personal use. Print sizes and digital compatibility are listed above.',
   complete:'Complete the room',more:'There is still more to keep here.',
   styles:'Available cover & page styles',
-  styleText:'These images show approved visual directions. The calendar delivered with purchase is separately verified for dates and text.',
+  coverStyles:'Cover styles',
+  pageStyles:'Page styles',
+  styleText:'Choose the visual direction you prefer. These are style previews; the delivered calendar is separately verified for dates and text.',
   customTitle:'Want to make it more yours?',
   customText:'Like this edition, but want to replace a few pages? You can. Selected pages can be swapped for pages from the other Gentle Discipline editions on request.',
   preview:'LA VATRA · PREVIEW'
@@ -65,13 +79,21 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
     <div className="gallery">
      {gentle ? <>
       <div className="planner-gallery-heading"><p className="eyebrow">{ui.preview}</p><h2>{ui.styles}</h2></div>
-      <div className="planner-preview-main">
-       <img src={gentleGallery[0].src} alt={ro?gentleGallery[0].ro:gentleGallery[0].en}/>
-       <span>{ui.preview}</span>
+      <h3 className="planner-style-subhead">{ui.coverStyles}</h3>
+      <div className="planner-style-grid">
+       {gentleCoverStyles.map(item=><figure key={item.key} className="planner-style-card">
+        <div className={'planner-style-sprite planner-style-sprite--'+item.pos} role="img" aria-label={ro?item.ro:item.en}>
+         <span>{ui.preview}</span>
+        </div>
+        <figcaption>{ro?item.ro:item.en}</figcaption>
+       </figure>)}
       </div>
-      <div className="planner-preview-grid">
-       {gentleGallery.slice(1).map(item=><figure key={item.src}>
-        <div><img src={item.src} alt={ro?item.ro:item.en}/><span>{ui.preview}</span></div>
+      <h3 className="planner-style-subhead planner-style-subhead--pages">{ui.pageStyles}</h3>
+      <div className="planner-style-grid planner-style-grid--pages">
+       {gentlePageStyles.map(item=><figure key={item.key} className="planner-style-card">
+        <div className={'planner-style-sprite planner-style-sprite--'+item.pos} role="img" aria-label={ro?item.ro:item.en}>
+         <span>{ui.preview}</span>
+        </div>
         <figcaption>{ro?item.ro:item.en}</figcaption>
        </figure>)}
       </div>
