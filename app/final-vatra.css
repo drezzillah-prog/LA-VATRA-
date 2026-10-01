@@ -100,7 +100,7 @@ body,.product-card-copy p,.room-world-copy>p:last-child,.lv-hero-copy>p:not(.eye
 .planner-style-card figcaption{font-family:var(--font-body);padding-top:8px;display:grid;gap:2px}
 .planner-style-card figcaption strong{font-family:var(--font-display);font-size:16px;font-weight:400;color:var(--wood)}
 .planner-style-card figcaption span{font-size:11px;line-height:1.35;color:var(--muted)}
-.planner-style-sprite{position:relative;width:100%;aspect-ratio:4/5;background-image:url('/products/gentle-discipline/gentle-visual-styles-v4.webp');background-repeat:no-repeat;background-size:200% 400%;border:1px solid var(--line);background-color:#eadfcb;overflow:hidden}
+.planner-style-sprite{position:relative;width:100%;aspect-ratio:4/5;background-image:var(--gentle-sprite);background-repeat:no-repeat;background-size:200% 400%;border:1px solid var(--line);background-color:#eadfcb;overflow:hidden}
 .planner-style-sprite>span{position:absolute;right:7px;bottom:7px;background:rgba(246,241,231,.9);color:var(--wood);padding:5px 7px;font-size:6px;letter-spacing:.12em}
 .planner-style-sprite--p0{background-position:0% 0%}
 .planner-style-sprite--p1{background-position:100% 0%}

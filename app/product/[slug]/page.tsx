@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import type {CSSProperties} from 'react';
 import {notFound} from 'next/navigation';
 import Newsletter from '@/components/Newsletter';
 import ProductCard from '@/components/ProductCard';
 import {getProduct,products,rooms} from '@/data/catalog';
 import {getRequestContext,formatPrice} from '@/lib/localization';
+import {gentleSpriteData} from '@/data/gentleSprite';
 
 export function generateStaticParams(){return products.map(({slug})=>({slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=getProduct(slug);return {title:p?.title||'Product'};}
@@ -51,9 +53,9 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   inside:'În această ediție',receive:'Ce primești.',made:'Pentru cine',room:'Odaie',
   know:'Bine de știut',knowText:'Conceput pentru uz personal. Formatele de print și compatibilitatea digitală sunt indicate mai sus.',
   complete:'Completează odaia',more:'Mai sunt lucruri de păstrat aici.',
-  styles:'Stiluri de copertă și pagini disponibile',
+  styles:'Alege stilul plannerului',
   coverStyles:'Stiluri de copertă',
-  pageStyles:'Stiluri de pagini',
+  pageStyles:'Stiluri pentru paginile interioare',
   styleText:'Cele patru stiluri sunt disponibile atât pentru copertă, cât și pentru paginile interioare. Numele descrie felul desenelor, ornamentația și paleta — nu tipul paginii. Calendarul final este verificat separat pentru date și text.',
   customTitle:'Îl vrei mai aproape de tine?',
   customText:'Îți place această ediție, dar ai vrea să înlocuiești câteva pagini cu altele? Se poate. Anumite pagini pot fi schimbate la cerere cu pagini din celelalte ediții Gentle Discipline.',
@@ -64,9 +66,9 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   inside:'Inside the edition',receive:'What you receive.',made:'Made for',room:'Room',
   know:'Good to know',knowText:'Designed for personal use. Print sizes and digital compatibility are listed above.',
   complete:'Complete the room',more:'There is still more to keep here.',
-  styles:'Available cover & page styles',
+  styles:'Choose your planner style',
   coverStyles:'Cover styles',
-  pageStyles:'Page styles',
+  pageStyles:'Interior page styles',
   styleText:'The same four visual styles are available for both covers and interior pages. The names describe illustration, ornament and palette — not the page type. The final calendar is separately verified for dates and text.',
   customTitle:'Want to make it more yours?',
   customText:'Like this edition, but want to replace a few pages? You can. Selected pages can be swapped for pages from the other Gentle Discipline editions on request.',
@@ -76,7 +78,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
  return <>
   <section className={'product-detail-hero product-detail-hero--'+product.collection}>
    <div className="shell product-detail-grid">
-    <div className="gallery">
+    <div className="gallery" style={gentle?({'--gentle-sprite':`url("${gentleSpriteData}")`} as CSSProperties):undefined}>
      {gentle ? <>
       <div className="planner-gallery-heading"><p className="eyebrow">{ui.preview}</p><h2>{ui.styles}</h2></div>
       <h3 className="planner-style-subhead">{ui.coverStyles}</h3>
@@ -94,7 +96,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
         <div className={'planner-style-sprite planner-style-sprite--'+item.pos} role="img" aria-label={ro?item.ro:item.en}>
          <span>{ui.preview}</span>
         </div>
-        <figcaption>{ro?item.ro:item.en}</figcaption>
+        <figcaption><strong>{ro?item.ro:item.en}</strong><span>{ro?item.roDetail:item.enDetail}</span></figcaption>
        </figure>)}
       </div>
       <p className="planner-preview-note">{ui.styleText}</p>
