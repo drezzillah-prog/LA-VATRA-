@@ -9,9 +9,9 @@ export function generateStaticParams(){return products.map(({slug})=>({slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=getProduct(slug);return {title:p?.title||'Product'};}
 
 const gentleGallery=[
- {src:'/products/gentle-discipline/01-approved-cover.webp',ro:'Copertă aprobată',en:'Approved cover'},
- {src:'/products/gentle-discipline/02-approved-interior.webp',ro:'Interior aprobat',en:'Approved interior'},
- {src:'/products/gentle-discipline/03-approved-styles.jpg',ro:'Alte stiluri aprobate',en:'More approved styles'}
+ {src:'/products/gentle-discipline/01-approved-cover-v2.webp',ro:'Copertă aprobată',en:'Approved cover'},
+ {src:'/products/gentle-discipline/02-approved-interior-v2.webp',ro:'Interior aprobat',en:'Approved interior'},
+ {src:'/products/gentle-discipline/03-approved-styles-v2.webp',ro:'Alte stiluri aprobate',en:'More approved styles'}
 ];
 
 const gentleIncludedRo=[
