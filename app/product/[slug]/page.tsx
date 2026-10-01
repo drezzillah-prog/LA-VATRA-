@@ -9,19 +9,17 @@ export function generateStaticParams(){return products.map(({slug})=>({slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=getProduct(slug);return {title:p?.title||'Product'};}
 
 const gentleCoverStyles=[
- {key:'rustic-floral',pos:'p0',ro:'Rustic floral',en:'Rustic floral'},
- {key:'vintage-paper',pos:'p1',ro:'Hârtie vintage',en:'Vintage paper'},
- {key:'dark-folk',pos:'p2',ro:'Dark folk',en:'Dark folk'},
- {key:'textile',pos:'p3',ro:'Broderie / inspirație textilă',en:'Embroidered / textile inspired'},
- {key:'dobrogea',pos:'p4',ro:'Dobrogea de coastă',en:'Coastal Dobrogea'},
- {key:'heritage-minimal',pos:'p5',ro:'Heritage minimal',en:'Heritage minimal'}
+ {key:'rustic-floral',pos:'p0',ro:'Rustic floral',en:'Rustic floral',roDetail:'Flori de câmp, măceșe și motive geometrice țesute.',enDetail:'Wildflowers, rosehips and woven geometric motifs.'},
+ {key:'vintage-paper',pos:'p2',ro:'Hârtie vintage',en:'Vintage paper',roDetail:'Hârtie patinată, sepia și ilustrații fine de arhivă.',enDetail:'Aged paper, sepia tones and fine archival illustration.'},
+ {key:'dark-folk',pos:'p4',ro:'Dark folk',en:'Dark folk',roDetail:'Fundaluri adânci, flori nocturne și ornamente folclorice.',enDetail:'Deep backgrounds, nocturnal florals and folk ornament.'},
+ {key:'coastal-dobrogea',pos:'p6',ro:'Dobrogea de coastă',en:'Coastal Dobrogea',roDetail:'Albastru stins, ierburi de coastă, mare și ceramică dobrogeană.',enDetail:'Muted blue, coastal grasses, sea and Dobrogean ceramics.'}
 ];
 
 const gentlePageStyles=[
- {key:'goals',pos:'p6',ro:'Obiective și priorități',en:'Goals & priorities'},
- {key:'month',pos:'p7',ro:'Calendar lunar 2027',en:'Monthly calendar 2027'},
- {key:'life-pages',pos:'p8',ro:'Rețete, tradiții, filme și călătorii',en:'Recipes, traditions, films & travel'},
- {key:'coastal-week',pos:'p9',ro:'Plan săptămânal — Dobrogea',en:'Weekly plan — Dobrogea'}
+ {key:'rustic-floral-pages',pos:'p1',ro:'Rustic floral',en:'Rustic floral',roDetail:'Borduri florale, măceșe, margarete și motive roșu-cărămiziu.',enDetail:'Floral borders, rosehips, daisies and brick-red motifs.'},
+ {key:'vintage-paper-pages',pos:'p3',ro:'Hârtie vintage',en:'Vintage paper',roDetail:'Desene în tuș și sepia, plante presate și mici scene de casă.',enDetail:'Ink and sepia drawings, pressed botanicals and small home scenes.'},
+ {key:'dark-folk-pages',pos:'p5',ro:'Dark folk',en:'Dark folk',roDetail:'Ramuri, flori întunecate și simboluri populare desenate fin.',enDetail:'Branches, dark florals and finely drawn folk symbols.'},
+ {key:'coastal-dobrogea-pages',pos:'p7',ro:'Dobrogea de coastă',en:'Coastal Dobrogea',roDetail:'Flori de câmp, valuri, faleză și accente albastre discrete.',enDetail:'Wildflowers, waves, cliffs and restrained blue accents.'}
 ];
 
 const gentleIncludedRo=[
@@ -40,7 +38,9 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
  const related=products.filter(p=>p.room===product.room&&p.slug!==product.slug).slice(0,3);
  const gentle=product.slug==='gentle-discipline-planner';
  const displayTitle=gentle&&ro?'Planificator Gentle Discipline 2027':product.title;
- const displaySubtitle=gentle&&ro?'Structură fără severitate, pentru anul 2027.':product.subtitle;
+ const displaySubtitle=gentle
+  ?(ro?'Un an mai așezat, cu loc pentru planuri, ritm și lucrurile care contează.':'A calmer way to shape the year, with room for plans, rhythm and what matters.')
+  :product.subtitle;
  const displayDescription=gentle&&ro
   ?'Un sistem de planificare pentru un an mai așezat: suficientă structură ca să știi încotro mergi, fără să transformi fiecare zi într-o probă de productivitate.'
   :product.description;
@@ -54,7 +54,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   styles:'Stiluri de copertă și pagini disponibile',
   coverStyles:'Stiluri de copertă',
   pageStyles:'Stiluri de pagini',
-  styleText:'Alege stilul care îți place. Imaginile sunt preview-uri ale direcțiilor vizuale; calendarul livrat este verificat separat pentru date și text.',
+  styleText:'Cele patru stiluri sunt disponibile atât pentru copertă, cât și pentru paginile interioare. Numele descrie felul desenelor, ornamentația și paleta — nu tipul paginii. Calendarul final este verificat separat pentru date și text.',
   customTitle:'Îl vrei mai aproape de tine?',
   customText:'Îți place această ediție, dar ai vrea să înlocuiești câteva pagini cu altele? Se poate. Anumite pagini pot fi schimbate la cerere cu pagini din celelalte ediții Gentle Discipline.',
   preview:'LA VATRA · PREVIEW'
@@ -67,7 +67,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   styles:'Available cover & page styles',
   coverStyles:'Cover styles',
   pageStyles:'Page styles',
-  styleText:'Choose the visual direction you prefer. These are style previews; the delivered calendar is separately verified for dates and text.',
+  styleText:'The same four visual styles are available for both covers and interior pages. The names describe illustration, ornament and palette — not the page type. The final calendar is separately verified for dates and text.',
   customTitle:'Want to make it more yours?',
   customText:'Like this edition, but want to replace a few pages? You can. Selected pages can be swapped for pages from the other Gentle Discipline editions on request.',
   preview:'LA VATRA · PREVIEW'
@@ -85,7 +85,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
         <div className={'planner-style-sprite planner-style-sprite--'+item.pos} role="img" aria-label={ro?item.ro:item.en}>
          <span>{ui.preview}</span>
         </div>
-        <figcaption>{ro?item.ro:item.en}</figcaption>
+        <figcaption><strong>{ro?item.ro:item.en}</strong><span>{ro?item.roDetail:item.enDetail}</span></figcaption>
        </figure>)}
       </div>
       <h3 className="planner-style-subhead planner-style-subhead--pages">{ui.pageStyles}</h3>

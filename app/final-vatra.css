@@ -92,28 +92,27 @@ body,.product-card-copy p,.room-world-copy>p:last-child,.lv-hero-copy>p:not(.eye
 @media(max-width:720px){.planner-preview-grid{grid-template-columns:1fr 1fr;gap:8px}.included-list{columns:1}}
 
 
-/* Gentle Discipline complete style gallery — sprite v3 */
+/* Gentle Discipline visual styles — v4: same four styles for covers and interiors */
 .planner-style-subhead{font-size:24px;margin:22px 0 12px;color:var(--wood)}
 .planner-style-subhead--pages{margin-top:34px}
-.planner-style-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.planner-style-grid--pages{grid-template-columns:repeat(2,minmax(0,1fr))}
+.planner-style-grid,.planner-style-grid--pages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .planner-style-card{margin:0;min-width:0}
-.planner-style-card figcaption{font-family:var(--font-body);font-size:12px;line-height:1.35;color:var(--muted);padding-top:7px}
-.planner-style-sprite{position:relative;width:100%;aspect-ratio:4/5;background-image:url('/products/gentle-discipline/gentle-style-sprite-v3.webp');background-repeat:no-repeat;background-size:200% 500%;border:1px solid var(--line);background-color:#eadfcb;overflow:hidden}
+.planner-style-card figcaption{font-family:var(--font-body);padding-top:8px;display:grid;gap:2px}
+.planner-style-card figcaption strong{font-family:var(--font-display);font-size:16px;font-weight:400;color:var(--wood)}
+.planner-style-card figcaption span{font-size:11px;line-height:1.35;color:var(--muted)}
+.planner-style-sprite{position:relative;width:100%;aspect-ratio:4/5;background-image:url('/products/gentle-discipline/gentle-visual-styles-v4.webp');background-repeat:no-repeat;background-size:200% 400%;border:1px solid var(--line);background-color:#eadfcb;overflow:hidden}
 .planner-style-sprite>span{position:absolute;right:7px;bottom:7px;background:rgba(246,241,231,.9);color:var(--wood);padding:5px 7px;font-size:6px;letter-spacing:.12em}
 .planner-style-sprite--p0{background-position:0% 0%}
 .planner-style-sprite--p1{background-position:100% 0%}
-.planner-style-sprite--p2{background-position:0% 25%}
-.planner-style-sprite--p3{background-position:100% 25%}
-.planner-style-sprite--p4{background-position:0% 50%}
-.planner-style-sprite--p5{background-position:100% 50%}
-.planner-style-sprite--p6{background-position:0% 75%}
-.planner-style-sprite--p7{background-position:100% 75%}
-.planner-style-sprite--p8{background-position:0% 100%}
-.planner-style-sprite--p9{background-position:100% 100%}
+.planner-style-sprite--p2{background-position:0% 33.333%}
+.planner-style-sprite--p3{background-position:100% 33.333%}
+.planner-style-sprite--p4{background-position:0% 66.666%}
+.planner-style-sprite--p5{background-position:100% 66.666%}
+.planner-style-sprite--p6{background-position:0% 100%}
+.planner-style-sprite--p7{background-position:100% 100%}
 @media(max-width:720px){
  .planner-style-grid,.planner-style-grid--pages{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
  .planner-style-subhead{font-size:21px;margin-top:18px}
- .planner-style-card figcaption{font-size:11px}
- .planner-preview-main{display:none}
+ .planner-style-card figcaption strong{font-size:14px}
+ .planner-style-card figcaption span{font-size:10px}
 }
