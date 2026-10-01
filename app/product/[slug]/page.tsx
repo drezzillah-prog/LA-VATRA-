@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import type {CSSProperties} from 'react';
 import {notFound} from 'next/navigation';
 import Newsletter from '@/components/Newsletter';
 import ProductCard from '@/components/ProductCard';
@@ -41,7 +40,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
  const gentle=product.slug==='gentle-discipline-planner';
  const displayTitle=gentle&&ro?'Planificator Gentle Discipline 2027':product.title;
  const displaySubtitle=gentle
-  ?(ro?'Un an mai așezat, cu loc pentru planuri, ritm și lucrurile care contează.':'A calmer way to shape the year, with room for plans, rhythm and what matters.')
+  ?(ro?'Un planificator pentru 2027, creat să-ți așeze planurile, prioritățile și lucrurile care contează într-un ritm care poate fi ținut.':'A 2027 planner designed to bring plans, priorities and the things that matter into a rhythm you can actually keep.')
   :product.subtitle;
  const displayDescription=gentle&&ro
   ?'Un sistem de planificare pentru un an mai așezat: suficientă structură ca să știi încotro mergi, fără să transformi fiecare zi într-o probă de productivitate.'
@@ -54,9 +53,9 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   know:'Bine de știut',knowText:'Conceput pentru uz personal. Formatele de print și compatibilitatea digitală sunt indicate mai sus.',
   complete:'Completează odaia',more:'Mai sunt lucruri de păstrat aici.',
   styles:'Alege stilul plannerului',
-  coverStyles:'Stiluri de copertă',
-  pageStyles:'Stiluri pentru paginile interioare',
-  styleText:'Cele patru stiluri sunt disponibile atât pentru copertă, cât și pentru paginile interioare. Numele descrie felul desenelor, ornamentația și paleta — nu tipul paginii. Calendarul final este verificat separat pentru date și text.',
+  coverStyles:'4 stiluri de copertă',
+  pageStyles:'4 stiluri de pagini',
+  styleText:'Sunt aceleași patru familii vizuale pentru copertă și interior: Rustic floral, Hârtie vintage, Dark folk și Dobrogea de coastă. La paginile interioare, stilul înseamnă tipul desenului, bordurile, motivele și paleta — nu funcția paginii. Calendarul final este verificat separat pentru date și text.',
   customTitle:'Îl vrei mai aproape de tine?',
   customText:'Îți place această ediție, dar ai vrea să înlocuiești câteva pagini cu altele? Se poate. Anumite pagini pot fi schimbate la cerere cu pagini din celelalte ediții Gentle Discipline.',
   preview:'LA VATRA · PREVIEW'
@@ -67,9 +66,9 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   know:'Good to know',knowText:'Designed for personal use. Print sizes and digital compatibility are listed above.',
   complete:'Complete the room',more:'There is still more to keep here.',
   styles:'Choose your planner style',
-  coverStyles:'Cover styles',
-  pageStyles:'Interior page styles',
-  styleText:'The same four visual styles are available for both covers and interior pages. The names describe illustration, ornament and palette — not the page type. The final calendar is separately verified for dates and text.',
+  coverStyles:'4 cover styles',
+  pageStyles:'4 page styles',
+  styleText:'The same four visual families are available for cover and interior: Rustic Floral, Vintage Paper, Dark Folk and Coastal Dobrogea. For interior pages, style means the illustration language, borders, motifs and palette — not the page function. The final calendar is separately verified for dates and text.',
   customTitle:'Want to make it more yours?',
   customText:'Like this edition, but want to replace a few pages? You can. Selected pages can be swapped for pages from the other Gentle Discipline editions on request.',
   preview:'LA VATRA · PREVIEW'
@@ -78,13 +77,14 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
  return <>
   <section className={'product-detail-hero product-detail-hero--'+product.collection}>
    <div className="shell product-detail-grid">
-    <div className="gallery" style={gentle?({'--gentle-sprite':`url("${gentleSpriteData}")`} as CSSProperties):undefined}>
+    <div className="gallery">
      {gentle ? <>
       <div className="planner-gallery-heading"><p className="eyebrow">{ui.preview}</p><h2>{ui.styles}</h2></div>
       <h3 className="planner-style-subhead">{ui.coverStyles}</h3>
       <div className="planner-style-grid">
        {gentleCoverStyles.map(item=><figure key={item.key} className="planner-style-card">
         <div className={'planner-style-sprite planner-style-sprite--'+item.pos} role="img" aria-label={ro?item.ro:item.en}>
+         <img className="planner-style-sprite-image" src={gentleSpriteData} alt="" aria-hidden="true"/>
          <span>{ui.preview}</span>
         </div>
         <figcaption><strong>{ro?item.ro:item.en}</strong><span>{ro?item.roDetail:item.enDetail}</span></figcaption>
