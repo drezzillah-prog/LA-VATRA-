@@ -4,7 +4,6 @@ import Newsletter from '@/components/Newsletter';
 import ProductCard from '@/components/ProductCard';
 import {getProduct,products,rooms} from '@/data/catalog';
 import {getRequestContext,formatPrice} from '@/lib/localization';
-import {gentleSpriteData} from '@/data/gentleSprite';
 
 export function generateStaticParams(){return products.map(({slug})=>({slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=getProduct(slug);return {title:p?.title||'Product'};}
@@ -81,21 +80,20 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
      {gentle ? <>
       <div className="planner-gallery-heading"><p className="eyebrow">{ui.preview}</p><h2>{ui.styles}</h2></div>
       <h3 className="planner-style-subhead">{ui.coverStyles}</h3>
-      <div className="planner-style-grid">
+      <div className="planner-style-sheet">
+       <img src="/products/gentle-discipline/covers-styles-v5.webp" alt={ro?'Patru stiluri de copertă Gentle Discipline 2027':'Four Gentle Discipline 2027 cover styles'} loading="eager"/>
+      </div>
+      <div className="planner-style-legend">
        {gentleCoverStyles.map(item=><figure key={item.key} className="planner-style-card">
-        <div className={'planner-style-sprite planner-style-sprite--'+item.pos} role="img" aria-label={ro?item.ro:item.en}>
-         <img className="planner-style-sprite-image" src={gentleSpriteData} alt="" aria-hidden="true"/>
-         <span>{ui.preview}</span>
-        </div>
         <figcaption><strong>{ro?item.ro:item.en}</strong><span>{ro?item.roDetail:item.enDetail}</span></figcaption>
        </figure>)}
       </div>
       <h3 className="planner-style-subhead planner-style-subhead--pages">{ui.pageStyles}</h3>
-      <div className="planner-style-grid planner-style-grid--pages">
+      <div className="planner-style-sheet planner-style-sheet--pages">
+       <img src="/products/gentle-discipline/pages-styles-v5.webp" alt={ro?'Patru stiluri pentru paginile Gentle Discipline 2027':'Four Gentle Discipline 2027 interior page styles'} loading="eager"/>
+      </div>
+      <div className="planner-style-legend planner-style-legend--pages">
        {gentlePageStyles.map(item=><figure key={item.key} className="planner-style-card">
-        <div className={'planner-style-sprite planner-style-sprite--'+item.pos} role="img" aria-label={ro?item.ro:item.en}>
-         <span>{ui.preview}</span>
-        </div>
         <figcaption><strong>{ro?item.ro:item.en}</strong><span>{ro?item.roDetail:item.enDetail}</span></figcaption>
        </figure>)}
       </div>

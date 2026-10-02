@@ -117,3 +117,55 @@ body,.product-card-copy p,.room-world-copy>p:last-child,.lv-hero-copy>p:not(.eye
  .planner-style-card figcaption strong{font-size:14px}
  .planner-style-card figcaption span{font-size:10px}
 }
+
+
+/* Gentle Discipline gallery v5 — real, high-resolution assets */
+.planner-style-sheet{
+  width:100%;
+  border:1px solid var(--line);
+  background:#2b211c;
+  overflow:hidden;
+  box-shadow:0 16px 42px rgba(43,33,28,.10);
+}
+.planner-style-sheet img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:none;
+  image-rendering:auto;
+}
+.planner-style-sheet--pages{margin-top:2px}
+.planner-style-legend{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px 14px;
+  margin-top:10px;
+}
+.planner-style-legend .planner-style-card{
+  margin:0;
+  padding:10px 2px 14px;
+  border-bottom:1px solid var(--line);
+}
+.planner-style-legend .planner-style-card figcaption{
+  padding:0;
+  display:grid;
+  gap:3px;
+}
+.planner-style-legend .planner-style-card figcaption strong{
+  font-family:var(--font-display);
+  font-size:17px;
+  font-weight:400;
+  color:var(--wood);
+}
+.planner-style-legend .planner-style-card figcaption span{
+  font-family:var(--font-body);
+  font-size:11px;
+  line-height:1.4;
+  color:var(--muted);
+}
+@media(max-width:720px){
+  .planner-style-sheet{width:100%}
+  .planner-style-legend{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px}
+  .planner-style-legend .planner-style-card figcaption strong{font-size:15px}
+  .planner-style-legend .planner-style-card figcaption span{font-size:10px}
+}
