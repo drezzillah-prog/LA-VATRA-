@@ -240,3 +240,9 @@ body,.product-card-copy p,.room-world-copy>p:last-child,.lv-hero-copy>p:not(.eye
   .planner-style-grid-v6 .planner-style-card figcaption strong{font-size:15px}
   .planner-style-grid-v6 .planner-style-card figcaption span{font-size:10px}
 }
+
+/* Gentle Discipline gallery v7 — individual high-resolution images, no sprites */
+.planner-preview-image{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line);background:#eadfcb;box-shadow:0 12px 30px rgba(43,33,28,.08)}
+.planner-preview-image img{display:block;width:100%;height:100%;object-fit:cover;image-rendering:auto}
+.planner-preview-image>span{position:absolute;z-index:2;right:8px;bottom:8px;background:rgba(43,33,28,.86);color:#fff8ec;padding:6px 8px;font-size:6px;letter-spacing:.14em}
+@media(max-width:720px){.planner-preview-image{aspect-ratio:4/5}}
