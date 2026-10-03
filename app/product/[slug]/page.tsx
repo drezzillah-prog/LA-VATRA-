@@ -9,17 +9,22 @@ export function generateStaticParams(){return products.map(({slug})=>({slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=getProduct(slug);return {title:p?.title||'Product'};}
 
 const gentleCoverStyles=[
- {key:'rustic-floral',pos:'p0',ro:'Rustic floral',en:'Rustic floral',roDetail:'Flori de câmp, măceșe, frunze și borduri botanice luminoase.',enDetail:'Wildflowers, rosehips, leaves and light botanical borders.'},
- {key:'vintage-paper',pos:'p2',ro:'Hârtie vintage',en:'Vintage paper',roDetail:'Hârtie patinată, gravuri sepia, peisaje vechi și ilustrații botanice de arhivă.',enDetail:'Aged paper, sepia engravings, old landscapes and archival botanical illustration.'},
- {key:'dark-folk',pos:'p4',ro:'Dark folk',en:'Dark folk',roDetail:'Luni, molii, păsări, ierburi și simboluri populare pe fundaluri adânci.',enDetail:'Moons, moths, birds, herbs and folk symbols on deep backgrounds.'},
- {key:'embroidered-textile',pos:'p6',ro:'Broderie / textil',en:'Embroidered / textile',roDetail:'Motive geometrice inspirate din țesături și broderii, benzi decorative și accente roșu-negru.',enDetail:'Geometric motifs inspired by woven textiles and embroidery, decorative bands and red-black accents.'}
+ {key:'rustic-floral',pos:'g0',ro:'Rustic floral',en:'Rustic floral',roDetail:'Flori de câmp, măceșe, frunze și borduri botanice luminoase.',enDetail:'Wildflowers, rosehips, leaves and light botanical borders.'},
+ {key:'vintage-paper',pos:'g1',ro:'Hârtie vintage',en:'Vintage paper',roDetail:'Hârtie patinată, gravuri sepia, peisaje vechi și ilustrații botanice de arhivă.',enDetail:'Aged paper, sepia engravings, old landscapes and archival botanical illustration.'},
+ {key:'dark-folk',pos:'g2',ro:'Dark folk',en:'Dark folk',roDetail:'Luni, molii, păsări, ierburi și simboluri populare pe fundaluri adânci.',enDetail:'Moons, moths, birds, herbs and folk symbols on deep backgrounds.'},
+ {key:'embroidered-textile',pos:'g3',ro:'Broderie / textil',en:'Embroidered / textile',roDetail:'Motive geometrice inspirate din țesături și broderii, benzi decorative și accente roșu-negru.',enDetail:'Geometric motifs inspired by woven textiles and embroidery, decorative bands and red-black accents.'}
 ];
 
 const gentlePageStyles=[
- {key:'rustic-floral-pages',pos:'p1',ro:'Rustic floral',en:'Rustic floral',roDetail:'Borduri cu flori de câmp, măceșe, margarete și mici desene botanice în colțuri.',enDetail:'Wildflower borders, rosehips, daisies and small botanical drawings in the corners.'},
- {key:'vintage-paper-pages',pos:'p3',ro:'Hârtie vintage',en:'Vintage paper',roDetail:'Gravuri în tuș și sepia, plante presate, mici peisaje și obiecte desenate ca într-un caiet vechi.',enDetail:'Ink and sepia engravings, pressed botanicals, small landscapes and objects drawn like an old notebook.'},
- {key:'dark-folk-pages',pos:'p5',ro:'Dark folk',en:'Dark folk',roDetail:'Luni, molii, păsări, ierburi și simboluri populare desenate fin în margini și colțuri.',enDetail:'Moons, moths, birds, herbs and finely drawn folk symbols used in borders and corners.'},
- {key:'embroidered-textile-pages',pos:'p7',ro:'Broderie / textil',en:'Embroidered / textile',roDetail:'Borduri geometrice, motive de cusătură, mici elemente textile și accente roșu-negru.',enDetail:'Geometric borders, stitch-inspired motifs, small textile details and red-black accents.'}
+ {key:'rustic-floral-pages',pos:'g4',ro:'Rustic floral',en:'Rustic floral',roDetail:'Borduri cu flori de câmp, măceșe, margarete și mici desene botanice în colțuri.',enDetail:'Wildflower borders, rosehips, daisies and small botanical drawings in the corners.'},
+ {key:'vintage-paper-pages',pos:'g5',ro:'Hârtie vintage',en:'Vintage paper',roDetail:'Gravuri în tuș și sepia, plante presate, mici peisaje și obiecte desenate ca într-un caiet vechi.',enDetail:'Ink and sepia engravings, pressed botanicals, small landscapes and objects drawn like an old notebook.'},
+ {key:'dark-folk-pages',pos:'g6',ro:'Dark folk',en:'Dark folk',roDetail:'Luni, molii, păsări, ierburi și simboluri populare desenate fin în margini și colțuri.',enDetail:'Moons, moths, birds, herbs and finely drawn folk symbols used in borders and corners.'},
+ {key:'embroidered-textile-pages',pos:'g7',ro:'Broderie / textil',en:'Embroidered / textile',roDetail:'Borduri geometrice, motive de cusătură, mici elemente textile și accente roșu-negru.',enDetail:'Geometric borders, stitch-inspired motifs, small textile details and red-black accents.'}
+];
+
+const gentleExtraPreviews=[
+ {key:'recipes-traditions',pos:'g8',ro:'Rețete și tradiții',en:'Recipes & traditions',roDetail:'Un exemplu de pagini tematice cu mult spațiu real pentru rețete, obiceiuri și sărbători.',enDetail:'An example of themed pages with generous room for recipes, customs and celebrations.'},
+ {key:'weekly-tasks-recipes',pos:'g9',ro:'Săptămâna aceasta',en:'This week',roDetail:'Planul săptămânii pe stânga; în dreapta, spațiu amplu pentru lucrurile de făcut și rețetele de încercat.',enDetail:'The week on the left; generous room on the right for tasks and recipes to try.'}
 ];
 
 const gentleIncludedRo=[
@@ -57,7 +62,8 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   styleText:'Sunt aceleași patru familii vizuale pentru copertă și interior: Rustic floral, Hârtie vintage, Dark folk și Broderie / textil. La paginile interioare, stilul înseamnă tipul desenului, bordurile, motivele și paleta — nu funcția paginii. Calendarul final este verificat separat pentru date și text.',
   customTitle:'Îl vrei mai aproape de tine?',
   customText:'Îți place această ediție, dar ai vrea să înlocuiești câteva pagini cu altele? Se poate. Anumite pagini pot fi schimbate la cerere cu pagini din celelalte ediții Gentle Discipline.',
-  preview:'LA VATRA · PREVIEW'
+  preview:'LA VATRA · PREVIEW',
+  extraPages:'Alte exemple de interior'
  }:{
   price:'YOUR REGIONAL PRICE',format:'Format',buy:'Add to your hearth',soon:'Checkout connection coming next',
   micro:'Digital product · Your regional price is detected automatically.',
@@ -70,7 +76,8 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   styleText:'The same four visual families are available for cover and interior: Rustic Floral, Vintage Paper, Dark Folk and Embroidered / Textile. For interior pages, style means the illustration language, borders, motifs and palette — not the page function. The final calendar is separately verified for dates and text.',
   customTitle:'Want to make it more yours?',
   customText:'Like this edition, but want to replace a few pages? You can. Selected pages can be swapped for pages from the other Gentle Discipline editions on request.',
-  preview:'LA VATRA · PREVIEW'
+  preview:'LA VATRA · PREVIEW',
+  extraPages:'More interior examples'
  };
 
  return <>
@@ -80,20 +87,34 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
      {gentle ? <>
       <div className="planner-gallery-heading"><p className="eyebrow">{ui.preview}</p><h2>{ui.styles}</h2></div>
       <h3 className="planner-style-subhead">{ui.coverStyles}</h3>
-      <div className="planner-style-sheet">
-       <img src="/products/gentle-discipline/covers-styles-v5.webp" alt={ro?'Patru stiluri de copertă Gentle Discipline 2027':'Four Gentle Discipline 2027 cover styles'} loading="eager"/>
-      </div>
-      <div className="planner-style-legend">
-       {gentleCoverStyles.map(item=><figure key={item.key} className="planner-style-card">
+      <div className="planner-style-grid-v6">
+       {gentleCoverStyles.map(item=><figure key={item.key} className="planner-style-card planner-style-card--visual">
+        <div className={'planner-preview-crop planner-preview-crop--'+item.pos}>
+         <img src="/products/gentle-discipline/approved-10-v1.webp" alt="" aria-hidden="true" loading="eager"/>
+         <span>{ui.preview}</span>
+        </div>
         <figcaption><strong>{ro?item.ro:item.en}</strong><span>{ro?item.roDetail:item.enDetail}</span></figcaption>
        </figure>)}
       </div>
+
       <h3 className="planner-style-subhead planner-style-subhead--pages">{ui.pageStyles}</h3>
-      <div className="planner-style-sheet planner-style-sheet--pages">
-       <img src="/products/gentle-discipline/pages-styles-v5.webp" alt={ro?'Patru stiluri pentru paginile Gentle Discipline 2027':'Four Gentle Discipline 2027 interior page styles'} loading="eager"/>
+      <div className="planner-style-grid-v6">
+       {gentlePageStyles.map(item=><figure key={item.key} className="planner-style-card planner-style-card--visual">
+        <div className={'planner-preview-crop planner-preview-crop--'+item.pos}>
+         <img src="/products/gentle-discipline/approved-10-v1.webp" alt="" aria-hidden="true" loading="eager"/>
+         <span>{ui.preview}</span>
+        </div>
+        <figcaption><strong>{ro?item.ro:item.en}</strong><span>{ro?item.roDetail:item.enDetail}</span></figcaption>
+       </figure>)}
       </div>
-      <div className="planner-style-legend planner-style-legend--pages">
-       {gentlePageStyles.map(item=><figure key={item.key} className="planner-style-card">
+
+      <h3 className="planner-style-subhead planner-style-subhead--pages">{ui.extraPages}</h3>
+      <div className="planner-style-grid-v6 planner-style-grid-v6--extras">
+       {gentleExtraPreviews.map(item=><figure key={item.key} className="planner-style-card planner-style-card--visual">
+        <div className={'planner-preview-crop planner-preview-crop--'+item.pos}>
+         <img src="/products/gentle-discipline/approved-10-v1.webp" alt="" aria-hidden="true" loading="lazy"/>
+         <span>{ui.preview}</span>
+        </div>
         <figcaption><strong>{ro?item.ro:item.en}</strong><span>{ro?item.roDetail:item.enDetail}</span></figcaption>
        </figure>)}
       </div>

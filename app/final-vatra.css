@@ -169,3 +169,74 @@ body,.product-card-copy p,.room-world-copy>p:last-child,.lv-hero-copy>p:not(.eye
   .planner-style-legend .planner-style-card figcaption strong{font-size:15px}
   .planner-style-legend .planner-style-card figcaption span{font-size:10px}
 }
+
+
+/* Gentle Discipline gallery v6 — 10 approved high-resolution previews */
+.planner-style-grid-v6{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px 16px;
+}
+.planner-style-card--visual{margin:0;min-width:0}
+.planner-preview-crop{
+  position:relative;
+  width:100%;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#eadfcb;
+  box-shadow:0 12px 30px rgba(43,33,28,.08);
+}
+.planner-preview-crop img{
+  position:absolute;
+  width:500%;
+  height:200%;
+  max-width:none!important;
+  object-fit:fill;
+  display:block;
+  image-rendering:auto;
+}
+.planner-preview-crop>span{
+  position:absolute;
+  z-index:2;
+  right:8px;
+  bottom:8px;
+  background:rgba(43,33,28,.86);
+  color:#fff8ec;
+  padding:6px 8px;
+  font-size:6px;
+  letter-spacing:.14em;
+}
+.planner-preview-crop--g0 img{left:0;top:0}
+.planner-preview-crop--g1 img{left:-100%;top:0}
+.planner-preview-crop--g2 img{left:-200%;top:0}
+.planner-preview-crop--g3 img{left:-300%;top:0}
+.planner-preview-crop--g4 img{left:-400%;top:0}
+.planner-preview-crop--g5 img{left:0;top:-100%}
+.planner-preview-crop--g6 img{left:-100%;top:-100%}
+.planner-preview-crop--g7 img{left:-200%;top:-100%}
+.planner-preview-crop--g8 img{left:-300%;top:-100%}
+.planner-preview-crop--g9 img{left:-400%;top:-100%}
+.planner-style-grid-v6 .planner-style-card figcaption{
+  padding-top:9px;
+  display:grid;
+  gap:3px;
+}
+.planner-style-grid-v6 .planner-style-card figcaption strong{
+  font-family:var(--font-display);
+  font-size:17px;
+  font-weight:400;
+  color:var(--wood);
+}
+.planner-style-grid-v6 .planner-style-card figcaption span{
+  font-family:var(--font-body);
+  font-size:11px;
+  line-height:1.42;
+  color:var(--muted);
+}
+.planner-style-grid-v6--extras{margin-bottom:4px}
+@media(max-width:720px){
+  .planner-style-grid-v6{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .planner-style-grid-v6 .planner-style-card figcaption strong{font-size:15px}
+  .planner-style-grid-v6 .planner-style-card figcaption span{font-size:10px}
+}
