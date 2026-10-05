@@ -2,6 +2,7 @@ import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import Newsletter from '@/components/Newsletter';
 import ProductCard from '@/components/ProductCard';
+import GentleCustomizer from '@/components/GentleCustomizer';
 import {getProduct,products,rooms} from '@/data/catalog';
 import {getRequestContext,formatPrice} from '@/lib/localization';
 import {coverForest,coverPrincess,pagesForest,pagesPrincess} from '@/data/gentleNewVisuals';
@@ -32,13 +33,6 @@ const gentleExtraPreviews=[
  {key:'weekly-tasks-recipes',img:'/products/gentle-discipline/gallery/pages-extra-weekly-recipes.webp',ro:'Săptămâna aceasta',en:'This week',roDetail:'Planul săptămânii pe stânga; în dreapta, spațiu amplu pentru lucrurile de făcut și rețetele de încercat.',enDetail:'The week on the left; generous room on the right for tasks and recipes to try.'}
 ];
 
-const gentleIncludedRo=[
- 'Vedere anuală 2027','Date importante','Lucruri de făcut anul acesta','Obiective personale',
- 'Obiective profesionale / studiu','Planul lunii','Calendar lunar','Plan săptămânal',
- 'Prioritățile săptămânii','Listă generală de făcut','Urmărirea obiceiurilor',
- 'Buget lunar','Brain dump','Urmărirea medicamentelor','Revizuire trimestrială','Retrospectiva anului'
-];
-
 export default async function ProductPage({params}:{params:Promise<{slug:string}>}){
  const {slug}=await params;
  const product=getProduct(slug); if(!product)notFound();
@@ -54,7 +48,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
  const displayDescription=gentle&&ro
   ?'Un sistem de planificare pentru un an mai așezat: suficientă structură ca să știi încotro mergi, fără să transformi fiecare zi într-o probă de productivitate.'
   :product.description;
- const included=gentle&&ro?gentleIncludedRo:product.included;
+ const included=product.included;
  const ui=ro?{
   price:'PREȚUL TĂU',format:'Format',buy:'Adaugă la vatră',soon:'Plata va fi conectată în etapa următoare',
   micro:'Produs digital · Prețul este stabilit automat pentru regiunea ta.',
@@ -66,7 +60,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   pageStyles:'6 stiluri de pagini',
   styleText:'Sunt aceleași șase familii vizuale pentru copertă și interior: Rustic floral, Hârtie vintage, Dark folk, Broderie / textil, Pădure & ierburi și Poveste de prințesă. La paginile interioare, stilul înseamnă tipul desenului, bordurile, motivele și paleta — nu funcția paginii. Calendarul final este verificat separat pentru date și text.',
   customTitle:'Îl vrei mai aproape de tine?',
-  customText:'Îți place această ediție, dar ai vrea să înlocuiești câteva pagini cu altele? Se poate. Anumite pagini pot fi schimbate la cerere cu pagini din celelalte ediții Gentle Discipline.',
+  customText:'Alegi exact 15 componente din catalogul complet Gentle Discipline. Le poți combina între categorii, iar selecția ta rămâne salvată pe dispozitiv.',
   preview:'LA VATRA · PREVIEW',
   extraPages:'Alte exemple de interior'
  }:{
@@ -80,7 +74,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   pageStyles:'6 page styles',
   styleText:'The same six visual families are available for cover and interior: Rustic Floral, Vintage Paper, Dark Folk, Embroidered / Textile, Forest & Herbs and Princess Story. For interior pages, style means the illustration language, borders, motifs and palette — not the page function. The final calendar is separately verified for dates and text.',
   customTitle:'Want to make it more yours?',
-  customText:'Like this edition, but want to replace a few pages? You can. Selected pages can be swapped for pages from the other Gentle Discipline editions on request.',
+  customText:'Choose exactly 15 components from the full Gentle Discipline catalogue. Mix categories freely; your selection stays saved on your device.',
   preview:'LA VATRA · PREVIEW',
   extraPages:'More interior examples'
  };
@@ -143,7 +137,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
 
   <section className="section">
    <div className="shell product-story-grid">
-    <div><p className="eyebrow">{ui.inside}</p><h2>{ui.receive}</h2><ul className="included-list">{included.map(item=><li key={item}>{item}</li>)}</ul></div>
+    <div>{gentle?<GentleCustomizer ro={ro}/>:<><p className="eyebrow">{ui.inside}</p><h2>{ui.receive}</h2><ul className="included-list">{included.map(item=><li key={item}>{item}</li>)}</ul></>}</div>
     <div className="ideal-card">
      <p className="eyebrow">{ui.made}</p><p>{gentle&&ro?'Pentru cei care vor să-și organizeze anul fără să-și transforme viața într-o listă nesfârșită de obligații.':product.idealFor}</p>
      <hr/><p className="eyebrow">{ui.room}</p><p><Link href={'/rooms/'+room.slug}>{room.title} · {room.modern}</Link></p>
